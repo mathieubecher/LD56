@@ -12,6 +12,7 @@ public class LocomotionStateAttack : StateMachineBehaviour
         _animator.SetBool("canDodge", false);
         _animator.SetBool("canAttack", false);
         
+        m_character.UpdateDirection();
         m_character.animator.SetTrigger("Attack");
         m_character.velocity = Vector2.zero;  
     }

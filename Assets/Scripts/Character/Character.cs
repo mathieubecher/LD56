@@ -14,6 +14,9 @@ public class Character : LivingHitable
     [SerializeField] private Animator m_animator;
     [SerializeField] private float m_attackBuffer = 0.2f;
     [SerializeField] private float m_dodgeBuffer = 0.2f;
+    
+    private float m_currentAttackBuffer;
+    private float m_currentDodgeBuffer;
 
     public Animator animator => m_animator;
     public int currentLife => m_life.currentLife;
@@ -42,40 +45,60 @@ public class Character : LivingHitable
         Controller.OnDodgePress -= Dodge;
     }
 
+    private void Update()
+    {
+        BufferManagment();
+    }
     public void UpdateDirection()
     {
-        if(Controller.tilt > 0.0f)
-        {
-            Vector2 moveDir = Controller.moveDir;
-            m_animator.SetBool("side", math.abs(moveDir.x) > 0.1f  && (m_animator.GetBool("side") || math.abs(moveDir.y) < 0.1f));
-            m_animator.SetBool("north", moveDir.y >= 0.1f && (m_animator.GetBool("north") || math.abs(moveDir.x) < 0.1f));
-            m_animator.SetBool("south", moveDir.y <= -0.1f && (m_animator.GetBool("south") || math.abs(moveDir.x) < 0.1f));
+        Vector2 moveDir = Controller.lastValidDir;
+        m_animator.SetBool("side", math.abs(moveDir.x) > 0.1f  && (m_animator.GetBool("side") || math.abs(moveDir.y) < 0.1f));
+        m_animator.SetBool("north", moveDir.y >= 0.1f && (m_animator.GetBool("north") || math.abs(moveDir.x) < 0.1f));
+        m_animator.SetBool("south", moveDir.y <= -0.1f && (m_animator.GetBool("south") || math.abs(moveDir.x) < 0.1f));
 
-            if(m_animator.GetBool("side")) transform.localScale = new Vector3(math.sign(moveDir.x), 1.0f, 1.0f);
-
-        }
+        if(m_animator.GetBool("side")) transform.localScale = new Vector3(math.sign(moveDir.x), 1.0f, 1.0f);
     }
 
+    
+    private void BufferManagment()
+    {
+        if (m_currentAttackBuffer > 0.0f)
+        {
+            m_currentAttackBuffer -= Time.deltaTime;
+            if (m_currentAttackBuffer <= 0.0f)
+                m_locomotion.ResetTrigger("Attack");
+        }
+        if (m_currentDodgeBuffer > 0.0f)
+        {
+            m_currentDodgeBuffer -= Time.deltaTime;
+            if (m_currentDodgeBuffer <= 0.0f)
+                m_locomotion.ResetTrigger("Dodge");
+        }
+    }
     private void Attack()
     {
-        StartCoroutine(TryPlayAction("Attack", m_attackBuffer));
+        if (m_hasControl)
+        {
+            m_locomotion.SetTrigger("Attack");
+            m_currentAttackBuffer = m_attackBuffer;
+        }
     }
     
     private void Dodge()
     {
-        StartCoroutine(TryPlayAction("Dodge", m_dodgeBuffer));
-    }
-
-    private IEnumerator TryPlayAction(string _name, float _buffer)
-    {
-        if(m_hasControl) m_locomotion.SetTrigger(_name);
-        yield return new WaitForSeconds(_buffer);
-        if(m_hasControl) m_locomotion.ResetTrigger(_name);
+        if (m_hasControl)
+        {
+            m_locomotion.SetTrigger("Dodge");
+            m_currentDodgeBuffer = m_dodgeBuffer;
+        }
     }
 
     protected override void OnDamaged(Vector2 _source, int _damage)
     {
-        StartCoroutine(TryPlayAction("Hit", 0.1f));
+        if (m_hasControl)
+        {
+            m_locomotion.SetTrigger("Hit");
+        }
     }
 
     protected override void OnDead()

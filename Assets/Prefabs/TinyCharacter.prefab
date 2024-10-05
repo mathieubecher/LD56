@@ -258,12 +258,12 @@ GameObject:
   - component: {fileID: 4294299075196557228}
   - component: {fileID: 5259738798532356395}
   m_Layer: 7
-  m_Name: Debug
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4294299075196557228
 Transform:
   m_ObjectHideFlags: 0
@@ -272,13 +272,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5212642818133805854}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.70710635, w: 0.7071073}
-  m_LocalPosition: {x: 0.2026, y: 0, z: 0}
-  m_LocalScale: {x: 0.63853854, y: 0.34935248, z: 0.4174}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.154, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5208389926369310590}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_Father: {fileID: 309834188361745405}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5259738798532356395
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -320,8 +320,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0, g: 0.4912765, b: 1, a: 1}
+  m_Sprite: {fileID: -1391556029, guid: ce421ff0d4d818a499fd4c29b7b79d02, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -361,6 +361,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4294299075196557228}
   - {fileID: 8999451795702609850}
   - {fileID: 2788946367710729195}
   - {fileID: 5208389926369310590}
@@ -530,10 +531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 9140237770825030348, guid: f6741e7e125c1d4408123681d40704ca, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4294299075196557228}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3064847651355320677, guid: f6741e7e125c1d4408123681d40704ca, type: 3}
       insertIndex: -1
@@ -579,7 +577,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.55
 --- !u!4 &5208389926369310590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9140237770825030348, guid: f6741e7e125c1d4408123681d40704ca, type: 3}
