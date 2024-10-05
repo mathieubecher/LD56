@@ -14,7 +14,7 @@ public class LocomotionStateMove : StateMachineBehaviour
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
-    
+        m_character.UpdateDirection();
         m_character.velocity = Controller.moveDir * Controller.tilt * m_speed;    
     }
     

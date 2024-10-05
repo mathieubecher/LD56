@@ -213,37 +213,37 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Dodge
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: canAttack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Attack
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Hit
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: dead
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -371,7 +371,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf2430c9528ce9498fdf1fe569e3330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dodgeSpeed: 3
+  m_dodgeSpeed: 4
+  m_speedOverTime:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.05
+      value: 0
+      inSlope: 0.031196447
+      outSlope: 20.56591
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.43523988
+      outWeight: 0.13711306
+    - serializedVersion: 3
+      time: 0.15
+      value: 1
+      inSlope: 0.013175992
+      outSlope: 0.013175992
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13780794
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.4
+      value: 0.8
+      inSlope: -2.7310174
+      outSlope: -2.7310174
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.17961073
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1101 &5145280728680334235
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

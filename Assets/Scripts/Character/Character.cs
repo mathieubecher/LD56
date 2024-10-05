@@ -41,7 +41,7 @@ public class Character : LivingHitable
         Controller.OnDodgePress -= Dodge;
     }
 
-    private void Update()
+    public void UpdateDirection()
     {
         if(Controller.tilt > 0.0f)
         {
