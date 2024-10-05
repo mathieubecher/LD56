@@ -43,6 +43,12 @@ TagManager:
   - name: Debug
     uniqueID: 4251740247
     locked: 0
+  - name: Shadow
+    uniqueID: 2782941959
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Frame
+    uniqueID: 2185304319
     locked: 0

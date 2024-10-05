@@ -5,7 +5,7 @@ using UnityEngine;
 public class LivingHitable : Hitable
 {
     [Header("Living")]
-    [SerializeField] private Life m_life;
+    [SerializeField] protected Life m_life;
     
     protected override void Hit(Vector2 _source, int _damage)
     {

@@ -16,6 +16,7 @@ public class Character : LivingHitable
     [SerializeField] private float m_dodgeBuffer = 0.2f;
 
     public Animator animator => m_animator;
+    public int currentLife => m_life.currentLife;
     public Vector2 velocity
     {
         get => m_rigidbody.velocity;
