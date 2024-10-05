@@ -18,11 +18,11 @@ public class LivingHitable : Hitable
 
     protected virtual void OnDamaged(Vector2 _source, int _damage)
     {
-        
+        Debug.Log("Hit");
     }
 
     protected virtual void OnDead()
     {
-        
+        Debug.Log("Dead");
     }
 }
