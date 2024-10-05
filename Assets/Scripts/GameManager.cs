@@ -55,4 +55,9 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public static bool HitRelation(string _hitbox, string _hurtbox)
+    {
+        return _hitbox != _hurtbox;
+    }
 }

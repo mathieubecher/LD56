@@ -5,15 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Manager
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Character
   - Water
   - UI
-  - 
-  - 
+  - HitBox
+  - HurtBox
   - 
   - 
   - 
