@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Hurtbox : MonoBehaviour
 {
-    public delegate void HitEvent(Vector2 _source, float _damage);
-    public static event HitEvent OnHit;
+    public delegate void HitEvent(Vector2 _source, int _damage);
+    public event HitEvent OnHit;
 
-    public void Hit(Vector2 _source, float _damage)
+    public void Hit(Vector2 _source, int _damage)
     {
-        Debug.Log("Hit");
         OnHit?.Invoke(_source, _damage);
         
     }

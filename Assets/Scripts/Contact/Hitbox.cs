@@ -10,7 +10,7 @@ public class Hitbox : MonoBehaviour
         //Debug.Log(this.gameObject.name + " - " + this.tag + " -> " + _other.gameObject.name + " - " + _other.tag);
         if (GameManager.HitRelation(this.tag, _other.tag))
         {
-            _other.GetComponent<Hurtbox>().Hit(transform.position, 1.0f);
+            _other.GetComponent<Hurtbox>().Hit(transform.position, 1);
         }
     }
 }
