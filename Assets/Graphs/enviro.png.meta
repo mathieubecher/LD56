@@ -352,6 +352,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: enviro_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 21
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 877ff6692202cb14c86f41d9462c738a
+      internalID: 1829051650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -372,6 +393,7 @@ TextureImporter:
       enviro_6: -299718568
       enviro_7: -2124720221
       enviro_8: -1872316531
+      enviro_9: 1829051650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

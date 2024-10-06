@@ -35,11 +35,9 @@ public class GameManager : MonoBehaviour
     private bool m_hasControl = true;
     private Dictionary<string, int> m_items;
     [SerializeField] private List<ItemSprite> m_itemsSprites;
-    [SerializeField] private Frame m_frame;
-    [SerializeField] private Character m_character;
     public bool hasControl => m_hasControl;
-    public static Frame frame => instance.m_frame;
-    public static Character character => instance.m_character;
+    public static Frame frame => LevelManager.frame;
+    public static Character character => LevelManager.character;
     
     void Awake()
     {

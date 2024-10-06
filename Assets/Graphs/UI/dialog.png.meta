@@ -376,7 +376,7 @@ TextureImporter:
         width: 6
         height: 2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -397,7 +397,7 @@ TextureImporter:
         width: 2
         height: 2
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -405,6 +405,27 @@ TextureImporter:
       bones: []
       spriteID: 00a0b56d49059f84a915e00cde554315
       internalID: -1413537429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dialog_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1
+        width: 6
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378c32e37f5153046b6d1636cc80502e
+      internalID: -1221871278
       vertices: []
       indices: 
       edges: []
@@ -424,6 +445,7 @@ TextureImporter:
       dialog_1: -1761532073
       dialog_10: -147069470
       dialog_11: -1413537429
+      dialog_12: -1221871278
       dialog_2: 58313265
       dialog_3: 1964513828
       dialog_4: 149749955

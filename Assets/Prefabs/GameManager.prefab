@@ -312,5 +312,5 @@ MonoBehaviour:
   m_itemsSprites:
   - item: Sword
     sprite: {fileID: -1872316531, guid: 64600ac8a71be464a9348f6d19178cc2, type: 3}
-  m_frame: {fileID: 0}
-  m_character: {fileID: 0}
+  - item: Key
+    sprite: {fileID: 1829051650, guid: 64600ac8a71be464a9348f6d19178cc2, type: 3}
