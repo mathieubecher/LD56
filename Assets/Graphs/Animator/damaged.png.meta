@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: a4d1f5f443a16ec409cb720bcc4ff271
+guid: 2a5a07e0c5f2646459ff3982a84e7230
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2576023137440582333
-    second: dialog_0
+      213: 3865779245405396931
+    second: damaged_0
+  - first:
+      213: -6806755141263944071
+    second: damaged_1
+  - first:
+      213: -4102841925239998255
+    second: damaged_2
+  - first:
+      213: 229976294609435873
+    second: damaged_3
+  - first:
+      213: -8036808465469291113
+    second: damaged_4
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -74,7 +86,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -158,223 +170,118 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dialog_0
+      name: damaged_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
-        width: 46
-        height: 10
+        y: 9
+        width: 10
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 345baa7da90204cd0800000000000000
-      internalID: -2576023137440582333
+      spriteID: 3cf577eedb106a530800000000000000
+      internalID: 3865779245405396931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dialog_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1
-        width: 3
-        height: 2
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: facbed68da1b4d24cb4f182651d6cb31
-      internalID: -1761532073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dialog_2
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 1
-        width: 2
-        height: 2
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec5b7935d2b6bd242865e5e784fa3afe
-      internalID: 58313265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dialog_3
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 1
-        width: 2
-        height: 2
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4f75e2dd87ee2f46b52ee0e420950cb
-      internalID: 1964513828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dialog_4
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 1
-        width: 3
-        height: 2
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfffe547a564296409d0d5f38852c9d5
-      internalID: 149749955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dialog_5
+      name: damaged_1
       rect:
         serializedVersion: 2
         x: 10
-        y: 1
-        width: 3
-        height: 2
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        y: 9
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b62881b6c50025d4c8adf60d631325c8
-      internalID: -1924717847
+      spriteID: 97616e3434c8981a0800000000000000
+      internalID: -6806755141263944071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dialog_6
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 1
-        width: 2
-        height: 2
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3dc0025b5bd3e754da96f4d0931a0f8a
-      internalID: -147381646
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dialog_7
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 1
-        width: 2
-        height: 2
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17b5b1fc9faf2004c9038fa09b9a5977
-      internalID: 1642463729
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dialog_8
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 1
-        width: 3
-        height: 2
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cbc845b91b34bd48a0ec6e53c7aad5d
-      internalID: -1671457014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dialog_9
+      name: damaged_2
       rect:
         serializedVersion: 2
         x: 20
-        y: 1
-        width: 3
-        height: 2
-      alignment: 1
-      pivot: {x: 0, y: 1}
+        y: 9
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e62d19e13e7308347ae8d85f7e134845
-      internalID: 546661433
+      spriteID: 1d87d7cb107cf07c0800000000000000
+      internalID: -4102841925239998255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dialog_10
+      name: damaged_3
       rect:
         serializedVersion: 2
-        x: 24
-        y: 1
-        width: 6
-        height: 2
+        x: 30
+        y: 9
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ecb4f2b83a013300800000000000000
+      internalID: 229976294609435873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damaged_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 9
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795c9df0845877090800000000000000
+      internalID: -8036808465469291113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damaged_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 9
+        width: 10
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,20 +289,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f23af63f19b45e64c8e8555dc6be59a9
-      internalID: -147069470
+      spriteID: 41c66ca65488ccd42b113922ffdcc199
+      internalID: -1026831604
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dialog_11
+      name: damaged_6
       rect:
         serializedVersion: 2
-        x: 24
-        y: 1
-        width: 2
-        height: 2
+        x: 60
+        y: 9
+        width: 10
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,8 +310,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00a0b56d49059f84a915e00cde554315
-      internalID: -1413537429
+      spriteID: 6ea0fe3dac7af2042a7bd6b1ae6891f9
+      internalID: -1786811436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damaged_7
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 9
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29d9628ec987c7a43a1f9fe4f0261b78
+      internalID: -1007229514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damaged_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 9
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316e7dfd56ead9643b42beacb215a8be
+      internalID: -1656810706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damaged_9
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 9
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a63a3d62a5b0ef42b4b78085060b770
+      internalID: -1491275435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damaged_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c212f0a2cbc8184d9efdb8c176ee341
+      internalID: 847599932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damaged_11
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3888b023c14bb494fbbc62311d7c5ea6
+      internalID: -1154333423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damaged_12
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18a0e8486e5a3f4aaf986b94c916991
+      internalID: 227248200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damaged_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018126015657c09438a98f064ba590bb
+      internalID: 798756414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: damaged_14
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef13c5fb0717ae84c82ce34af6533970
+      internalID: -2031669883
       vertices: []
       indices: 
       edges: []
@@ -412,7 +487,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ff1a7eac21322e949a2e7aa238bc16d4
+    spriteID: 0d4d38a174e8b7243bf485ee2525c50d
     internalID: 0
     vertices: []
     indices: 
@@ -420,18 +495,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dialog_0: -2576023137440582333
-      dialog_1: -1761532073
-      dialog_10: -147069470
-      dialog_11: -1413537429
-      dialog_2: 58313265
-      dialog_3: 1964513828
-      dialog_4: 149749955
-      dialog_5: -1924717847
-      dialog_6: -147381646
-      dialog_7: 1642463729
-      dialog_8: -1671457014
-      dialog_9: 546661433
+      damaged_0: 3865779245405396931
+      damaged_1: -6806755141263944071
+      damaged_10: 847599932
+      damaged_11: -1154333423
+      damaged_12: 227248200
+      damaged_13: 798756414
+      damaged_14: -2031669883
+      damaged_2: -4102841925239998255
+      damaged_3: 229976294609435873
+      damaged_4: -8036808465469291113
+      damaged_5: -1026831604
+      damaged_6: -1786811436
+      damaged_7: -1007229514
+      damaged_8: -1656810706
+      damaged_9: -1491275435
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -223,9 +223,9 @@ MonoBehaviour:
   m_rigidbody: {fileID: 3299672595354159048}
   m_life: {fileID: 8973085095709176306}
   m_invulnerability: 0.4
-  m_hitPush: 0.4
-  m_hitPushStrength: 5
-  m_hitPushFriction: 0.8
+  m_hitPush: 0.3
+  m_hitPushStrength: 6
+  m_hitPushFriction: 0.9
   m_animator: {fileID: 3391406338285231039}
   m_receive: {fileID: 3264795870444313692}
   m_attackBuffer: 0.2

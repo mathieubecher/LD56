@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     private bool m_hasControl = true;
-    private List<string> m_items;
+    private Dictionary<string, int> m_items;
     [SerializeField] private List<ItemSprite> m_itemsSprites;
     [SerializeField] private Frame m_frame;
     [SerializeField] private Character m_character;
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
-        m_items = new List<string>();
+        m_items = new Dictionary<string, int>();
     }
     
     public void Play()
@@ -90,15 +90,24 @@ public class GameManager : MonoBehaviour
     public static bool HasItem(string _item)
     {
         if (instance.m_items == null) return false;
-        return instance.m_items.Contains(_item);
+        return instance.m_items.ContainsKey(_item);
     }
 
     public static void GiveItem(string _item)
     {
+        AddItem(_item, 1);
+        instance.StartCoroutine(instance.GiveItemCinematic(_item));
+    }
+
+    public static void AddItem(string _item, int _number)
+    {
         if (!HasItem(_item))
         {
-            instance.m_items.Add(_item);
-            instance.StartCoroutine(instance.GiveItemCinematic(_item));
+            instance.m_items.Add(_item, _number);
+        }
+        else
+        {
+            ++instance.m_items[_item];
         }
     }
 
@@ -115,6 +124,9 @@ public class GameManager : MonoBehaviour
         {
             case "Heal":
                 character.life.Heal(1);
+                break;
+            case "Coin":
+                AddItem(_item, 1);
                 break;
         }
     }
