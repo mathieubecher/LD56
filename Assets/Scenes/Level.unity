@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: m_frame
       value: 
       objectReference: {fileID: 495474314}
+    - target: {fileID: 3211758491164090605, guid: 6aef6e6a787037e499f6335389823f07, type: 3}
+      propertyPath: m_character
+      value: 
+      objectReference: {fileID: 347207444}
     - target: {fileID: 4610959448809626297, guid: 6aef6e6a787037e499f6335389823f07, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -786,11 +790,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6317223776741705633, guid: b421fc0c7ee0a894caa97f3646bff473, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.924
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 6317223776741705633, guid: b421fc0c7ee0a894caa97f3646bff473, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.308
+      value: 0.385
       objectReference: {fileID: 0}
     - target: {fileID: 6317223776741705633, guid: b421fc0c7ee0a894caa97f3646bff473, type: 3}
       propertyPath: m_LocalPosition.z

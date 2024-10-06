@@ -26,4 +26,11 @@ public class Life : MonoBehaviour
         }
         return true;
     }
+
+    public void Heal(int _heal)
+    {
+        m_currentLife += _heal;
+        if (m_currentLife > m_maxLife)
+            m_currentLife = m_maxLife;
+    }
 }

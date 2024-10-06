@@ -509,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8349768955818883596, guid: f6741e7e125c1d4408123681d40704ca, type: 3}
       propertyPath: m_angle
-      value: 60
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 9140237770825030348, guid: f6741e7e125c1d4408123681d40704ca, type: 3}
       propertyPath: m_LocalPosition.x

@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 9217290884921435614}
   - component: {fileID: 8917687824191298112}
   m_Layer: 8
-  m_Name: NPC
+  m_Name: TinyNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

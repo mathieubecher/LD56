@@ -294,9 +294,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 41
-        y: 29
-        width: 3
-        height: 4
+        y: 31
+        width: 2
+        height: 2
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,6 +306,27 @@ TextureImporter:
       bones: []
       spriteID: be9a590a3fd014842b0c2b21e92d56c4
       internalID: -299718568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enviro_7
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27aa02b74736ed4fa61ec2fc9eb7398
+      internalID: -2124720221
       vertices: []
       indices: 
       edges: []
@@ -328,6 +349,7 @@ TextureImporter:
       enviro_4: 1810967872
       enviro_5: -1482102200
       enviro_6: -299718568
+      enviro_7: -2124720221
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -34,6 +34,10 @@ public class Interact : MonoBehaviour
         {
             m_contact = _interactible;
         }
+        else if (_other.TryGetComponent(out PickableItem _pickable))
+        {
+            _pickable.Pick();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D _other)

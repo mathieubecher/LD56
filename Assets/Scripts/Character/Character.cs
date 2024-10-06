@@ -18,6 +18,7 @@ public class Character : LivingHitable
     private float m_currentDodgeBuffer;
 
     public Animator animator => m_animator;
+    public Life life => m_life;
     public int currentLife => m_life.currentLife;
     public Vector2 velocity
     {

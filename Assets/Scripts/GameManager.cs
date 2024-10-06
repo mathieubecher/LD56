@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,9 +22,12 @@ public class GameManager : MonoBehaviour
     #endregion
 
     private bool m_hasControl = true;
+    private List<string> m_items;
     [SerializeField] private Frame m_frame;
+    [SerializeField] private Character m_character;
     public bool hasControl => m_hasControl;
-    public Frame frame => m_frame;
+    public static Frame frame => instance.m_frame;
+    public static Character character => instance.m_character;
     
     void Awake()
     {
@@ -35,6 +39,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+        m_items = new List<string>();
     }
     
     public void Play()
@@ -66,5 +71,29 @@ public class GameManager : MonoBehaviour
     public static bool HitRelation(string _hitbox, string _hurtbox)
     {
         return _hitbox != _hurtbox;
+    }
+
+    public static bool HadItem(string _item)
+    {
+        if (instance.m_items == null) return false;
+        return instance.m_items.Contains(_item);
+    }
+
+    public static void GiveItem(string _item)
+    {
+        if (!HadItem(_item))
+        {
+            instance.m_items.Add(_item);
+        }
+    }
+
+    public static void PickItem(string _item)
+    {
+        switch (_item)
+        {
+            case "Heal":
+                character.life.Heal(1);
+                break;
+        }
     }
 }

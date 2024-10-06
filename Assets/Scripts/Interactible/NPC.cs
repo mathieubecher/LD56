@@ -6,6 +6,6 @@ public class NPC : Interactible
 {
     public override void Interact()
     {
-        GameManager.instance.frame.StartDialog(3);
+        GameManager.frame.StartDialog(3);
     }
 }

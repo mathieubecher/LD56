@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6317223776741705633}
-  - component: {fileID: 185602430762367493}
+  - component: {fileID: 8097375060251822497}
   - component: {fileID: 378680145421911865}
   - component: {fileID: 2878937244553944081}
-  m_Layer: 0
-  m_Name: Chest
-  m_TagString: Untagged
+  m_Layer: 8
+  m_Name: TinyChest
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 9099286729557432308}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &185602430762367493
+--- !u!114 &8097375060251822497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,9 +44,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6648085102889287610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d99eafc7a2344054f971c13d498516dd, type: 3}
+  m_Script: {fileID: 11500000, guid: d8af7923709326c4a8ae272f319002ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_chestSprite: {fileID: 1251108014852270869}
+  m_openSprite: {fileID: -1482102200, guid: 64600ac8a71be464a9348f6d19178cc2, type: 3}
+  m_contains: Sword
 --- !u!61 &378680145421911865
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,7 +158,7 @@ Transform:
   m_GameObject: {fileID: 7214675392988066123}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2695, z: -0.02871072}
+  m_LocalPosition: {x: 0, y: 0.2695, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -16,11 +16,7 @@ public class Loot : MonoBehaviour
     [SerializeField] private int m_maxItem = 3;
     [SerializeField] private List<Lootable> m_lootables;
     
-    void Start()
-    {
-        
-    }
-
+    
     public void CreateLoot()
     {
         int nbItems = 0;
