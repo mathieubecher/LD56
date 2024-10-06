@@ -88,13 +88,18 @@ public class GameManager : MonoBehaviour
     public static bool HasItem(string _item)
     {
         if (instance.m_items == null) return false;
-        return instance.m_items.ContainsKey(_item);
+        return instance.m_items.ContainsKey(_item) && instance.m_items[_item] > 0;
     }
 
     public static void GiveItem(string _item)
     {
         AddItem(_item, 1);
         instance.StartCoroutine(instance.GiveItemCinematic(_item));
+    }
+
+    public static void UseItem(string _item, int _number)
+    {
+        instance.m_items[_item] -= _number;
     }
 
     public static void AddItem(string _item, int _number)

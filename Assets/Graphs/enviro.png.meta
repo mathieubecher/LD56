@@ -373,6 +373,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: enviro_10
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 14
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4590d5170db446148b16095804533f09
+      internalID: 745576524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enviro_11
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 14
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cf2dc84da7c3e4dad99b615ddff6d8
+      internalID: -1024348463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -386,6 +428,8 @@ TextureImporter:
     nameFileIdTable:
       enviro_0: 6443355763755712467
       enviro_1: 8853968368186672453
+      enviro_10: 745576524
+      enviro_11: -1024348463
       enviro_2: -8568409474535872869
       enviro_3: -1255076004
       enviro_4: 1810967872

@@ -116,6 +116,15 @@ public class Character : LivingHitable
     {
         m_locomotion.SetBool("dead", true);
         GameManager.frame.Shake();
+        StartCoroutine(Respawn());
+
+
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSecondsRealtime(2.0f);
+        GameManager.instance.Play();
     }
 
     public void ReceiveItem(ItemSprite _item)
