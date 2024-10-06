@@ -11,6 +11,7 @@ public class Character : LivingHitable
     
     [Header("Character")]
     [SerializeField] private Animator m_animator;
+    [SerializeField] private SpriteRenderer m_receive;
     [SerializeField] private float m_attackBuffer = 0.2f;
     [SerializeField] private float m_dodgeBuffer = 0.2f;
     
@@ -36,6 +37,7 @@ public class Character : LivingHitable
         base.OnEnable();
         Controller.OnAttackPress += Attack;
         Controller.OnDodgePress += Dodge;
+        GameManager.OnResume += Resume;
     }
 
     private void OnDisable()
@@ -43,6 +45,7 @@ public class Character : LivingHitable
         base.OnDisable();
         Controller.OnAttackPress -= Attack;
         Controller.OnDodgePress -= Dodge;
+        GameManager.OnResume -= Resume;
     }
 
     protected void Update()
@@ -81,7 +84,7 @@ public class Character : LivingHitable
     }
     private void Attack()
     {
-        if (m_hasControl)
+        if (m_hasControl && GameManager.HasItem("Sword"))
         {
             m_locomotion.SetTrigger("Attack");
             m_currentAttackBuffer = m_attackBuffer;
@@ -112,5 +115,15 @@ public class Character : LivingHitable
     {
         m_locomotion.SetBool("dead", true);
     }
-    
+
+    public void ReceiveItem(ItemSprite _item)
+    {
+        m_receive.sprite = _item.sprite;
+        m_animator.SetTrigger("Receive");
+    }
+
+    public void Resume()
+    {
+        m_animator.SetTrigger("Resume");
+    }
 }

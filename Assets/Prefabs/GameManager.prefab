@@ -293,3 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b594179558a26a47a3c93ccee01dc54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_itemsSprites:
+  - item: Sword
+    sprite: {fileID: 370976530, guid: ce421ff0d4d818a499fd4c29b7b79d02, type: 3}
+  m_frame: {fileID: 0}
+  m_character: {fileID: 0}

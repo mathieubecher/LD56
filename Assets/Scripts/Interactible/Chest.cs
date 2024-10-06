@@ -13,7 +13,7 @@ public class Chest : Interactible
 
     private void OnEnable()
     {
-        if (GameManager.HadItem(m_contains))
+        if (GameManager.HasItem(m_contains))
         {
             m_open = true;
             m_chestSprite.sprite = m_openSprite;

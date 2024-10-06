@@ -4,9 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[Serializable]
+public struct ItemSprite
+{
+    public string item;
+    public Sprite sprite;
+}
 public class GameManager : MonoBehaviour
 {
     #region Singleton
+    
+    public delegate void SimpleEvent();
+    public static event SimpleEvent OnPause;
+    public static event SimpleEvent OnResume;
+    
     private static GameManager m_instance;
     public static GameManager instance
     {
@@ -23,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     private bool m_hasControl = true;
     private List<string> m_items;
+    [SerializeField] private List<ItemSprite> m_itemsSprites;
     [SerializeField] private Frame m_frame;
     [SerializeField] private Character m_character;
     public bool hasControl => m_hasControl;
@@ -61,11 +73,13 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         m_hasControl = false;
+        OnPause?.Invoke();
     }
     public void Resume()
     {
         Time.timeScale = 1.0f;
         m_hasControl = true;
+        OnResume?.Invoke();
     }
 
     public static bool HitRelation(string _hitbox, string _hurtbox)
@@ -73,7 +87,7 @@ public class GameManager : MonoBehaviour
         return _hitbox != _hurtbox;
     }
 
-    public static bool HadItem(string _item)
+    public static bool HasItem(string _item)
     {
         if (instance.m_items == null) return false;
         return instance.m_items.Contains(_item);
@@ -81,12 +95,20 @@ public class GameManager : MonoBehaviour
 
     public static void GiveItem(string _item)
     {
-        if (!HadItem(_item))
+        if (!HasItem(_item))
         {
             instance.m_items.Add(_item);
+            instance.StartCoroutine(instance.GiveItemCinematic(_item));
         }
     }
 
+    private IEnumerator GiveItemCinematic(string _item)
+    {
+        Pause();
+        character.ReceiveItem(m_itemsSprites.Find(x => x.item == _item));
+        yield return new WaitForSecondsRealtime(2.0f);
+        frame.StartDialog(3);
+    }
     public static void PickItem(string _item)
     {
         switch (_item)
