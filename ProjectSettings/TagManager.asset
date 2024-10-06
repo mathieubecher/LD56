@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Manager
   - Enemy
+  - Interact
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - HitBox
   - HurtBox
-  - 
+  - Interact
   - 
   - 
   - 
@@ -40,8 +41,8 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Debug
-    uniqueID: 4251740247
+  - name: Ground
+    uniqueID: 4234614321
     locked: 0
   - name: Shadow
     uniqueID: 2782941959

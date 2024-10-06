@@ -52,6 +52,8 @@ public class Character : LivingHitable
 
     public void UpdateDirection()
     {
+        if (!GameManager.instance.hasControl) return;
+        
         Vector2 moveDir = Controller.lastValidDir;
         m_animator.SetBool("side", math.abs(moveDir.x) > 0.1f  && (m_animator.GetBool("side") || math.abs(moveDir.y) < 0.1f));
         m_animator.SetBool("north", moveDir.y >= 0.1f && (m_animator.GetBool("north") || math.abs(moveDir.x) < 0.1f));

@@ -21,7 +21,9 @@ public class GameManager : MonoBehaviour
     #endregion
 
     private bool m_hasControl = true;
+    [SerializeField] private Frame m_frame;
     public bool hasControl => m_hasControl;
+    public Frame frame => m_frame;
     
     void Awake()
     {

@@ -14,6 +14,12 @@ public class LocomotionStateMove : StateMachineBehaviour
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
+
+        if (!GameManager.instance.hasControl)
+        {
+            m_character.animator.SetBool("move", false);
+            return;
+        }
         m_character.UpdateDirection();
         m_character.velocity = Controller.moveDir * Controller.tilt * m_speed;
         m_character.animator.SetBool("move", Controller.tilt > 0.1f);
