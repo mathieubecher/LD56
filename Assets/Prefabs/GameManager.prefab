@@ -243,6 +243,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: eb417d69-e3b3-44ed-8f13-fea73904b611
     m_ActionName: 'Default/Continue[/Keyboard/anyKey,/Mouse/leftButton,/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonEast,/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonNorth]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3211758491164090605}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7af4d279-b0a5-4deb-a3bb-e50b69c63e9f
+    m_ActionName: 'Default/Restart[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Default
@@ -295,6 +311,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemsSprites:
   - item: Sword
-    sprite: {fileID: 370976530, guid: ce421ff0d4d818a499fd4c29b7b79d02, type: 3}
+    sprite: {fileID: -1872316531, guid: 64600ac8a71be464a9348f6d19178cc2, type: 3}
   m_frame: {fileID: 0}
   m_character: {fileID: 0}

@@ -9,6 +9,7 @@ public class Frame : MonoBehaviour
     [SerializeField] private SpriteRenderer m_life;
     [SerializeField] private Vector2 m_offset;
     [SerializeField] private Dialog m_dialog;
+    [SerializeField] private Animator m_animator;
 
     void Update()
     {
@@ -16,6 +17,10 @@ public class Frame : MonoBehaviour
         m_life.sprite = m_lifePoint[m_character.currentLife];
     }
 
+    public void Shake()
+    {
+        m_animator.SetTrigger("Shake");
+    }
     public void StartDialog(int _dialogToDraw)
     {
         m_dialog.StartDialog(_dialogToDraw);

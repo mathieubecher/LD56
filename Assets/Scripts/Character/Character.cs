@@ -108,12 +108,14 @@ public class Character : LivingHitable
         if (m_hasControl)
         {
             m_locomotion.SetTrigger("Hit");
+            GameManager.frame.Shake();
         }
     }
 
     protected override void OnDead()
     {
         m_locomotion.SetBool("dead", true);
+        GameManager.frame.Shake();
     }
 
     public void ReceiveItem(ItemSprite _item)

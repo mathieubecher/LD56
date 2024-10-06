@@ -13,7 +13,7 @@ public class LivingHitable : Hitable
     [SerializeField] protected float m_hitPushFriction = 0.9f;
 
     private float m_invulnerabilityTimer;
-    private float m_hitPushTimer;
+    protected float m_hitPushTimer;
 
     protected void Awake()
     {
@@ -22,13 +22,13 @@ public class LivingHitable : Hitable
     protected void Update()
     {
         m_invulnerabilityTimer -= Time.deltaTime;
+        m_hitPushTimer -= Time.deltaTime;
     }
     
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         if (m_hitPushTimer > 0.0f)
         {
-            m_hitPushTimer -= Time.deltaTime;
             m_rigidbody.velocity *= m_hitPushFriction;
         }
         else if(m_life.dead) m_rigidbody.velocity = Vector2.zero;

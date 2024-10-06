@@ -261,18 +261,6 @@ PrefabInstance:
       propertyPath: m_character
       value: 
       objectReference: {fileID: 347207444}
-    - target: {fileID: 3211758491164090605, guid: 6aef6e6a787037e499f6335389823f07, type: 3}
-      propertyPath: m_itemsSprites.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3211758491164090605, guid: 6aef6e6a787037e499f6335389823f07, type: 3}
-      propertyPath: m_itemsSprites.Array.data[0].item
-      value: Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 3211758491164090605, guid: 6aef6e6a787037e499f6335389823f07, type: 3}
-      propertyPath: m_itemsSprites.Array.data[0].sprite
-      value: 
-      objectReference: {fileID: 370976530, guid: ce421ff0d4d818a499fd4c29b7b79d02, type: 3}
     - target: {fileID: 4610959448809626297, guid: 6aef6e6a787037e499f6335389823f07, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1388,11 +1376,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5646214718634347479, guid: 3b6b858a3c414a2499f15332d4fd864c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.695
+      value: -1.155
       objectReference: {fileID: 0}
     - target: {fileID: 5646214718634347479, guid: 3b6b858a3c414a2499f15332d4fd864c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.074
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5646214718634347479, guid: 3b6b858a3c414a2499f15332d4fd864c, type: 3}
       propertyPath: m_LocalPosition.z
