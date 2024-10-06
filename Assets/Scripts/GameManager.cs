@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
+
+    private bool m_hasControl = true;
+    public bool hasControl => m_hasControl;
     
     void Awake()
     {
@@ -31,7 +34,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
     }
-
+    
     public void Play()
     {
         SceneManager.LoadScene("Level");
@@ -49,11 +52,13 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        
+        Time.timeScale = 0.0f;
+        m_hasControl = false;
     }
     public void Resume()
     {
-        
+        Time.timeScale = 1.0f;
+        m_hasControl = true;
     }
 
     public static bool HitRelation(string _hitbox, string _hurtbox)

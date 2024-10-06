@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: c605d9c8e0fc80f4db6c48269791a0ac
+guid: 64600ac8a71be464a9348f6d19178cc2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7501387830980884940
-    second: frame_0
+      213: 6443355763755712467
+    second: enviro_0
+  - first:
+      213: 8853968368186672453
+    second: enviro_1
+  - first:
+      213: -8568409474535872869
+    second: enviro_2
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 13
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -158,22 +164,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: frame_0
+      name: enviro_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 50
-        height: 38
+        y: 27
+        width: 10
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc9bd0cfc784a1860800000000000000
-      internalID: 7501387830980884940
+      spriteID: 3dfff14cde56b6950800000000000000
+      internalID: 6443355763755712467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enviro_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 545cf4e025d9fda70800000000000000
+      internalID: 8853968368186672453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enviro_2
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 25
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b96a234faf4e61980800000000000000
+      internalID: -8568409474535872869
       vertices: []
       indices: 
       edges: []
@@ -181,7 +229,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8ec1d1349bdf6524c83ad22fb17551b6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -189,7 +237,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      frame_0: 7501387830980884940
+      enviro_0: 6443355763755712467
+      enviro_1: 8853968368186672453
+      enviro_2: -8568409474535872869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

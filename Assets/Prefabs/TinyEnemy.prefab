@@ -63,7 +63,7 @@ Transform:
   m_GameObject: {fileID: 5177308589553529615}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.695, y: 0.074, z: -5.8219814}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -83,7 +83,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hurtbox: {fileID: 3337912432804344769}
+  m_rigidbody: {fileID: 2983851853797878170}
   m_life: {fileID: 4090351020952473566}
+  m_invulnerability: 0.2
+  m_hitPush: 10
+  m_hitPushStrength: 5
+  m_hitPushFriction: 0.8
 --- !u!114 &4090351020952473566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23087c8c32b6db44af6ddfd483f88cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLife: 3
+  m_maxLife: 8
 --- !u!50 &2983851853797878170
 Rigidbody2D:
   serializedVersion: 4
@@ -123,7 +128,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!61 &2729089424342044096
 BoxCollider2D:
   m_ObjectHideFlags: 0

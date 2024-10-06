@@ -10,7 +10,6 @@ public class LocomotionStateDead : StateMachineBehaviour
     {
         m_character = _animator.GetComponent<Character>();
         m_character.animator.SetBool("dead", true);
-        m_character.velocity = Vector2.zero;  
     }
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)

@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class Character : LivingHitable
 {
-    private bool m_hasControl = true;
-    private Rigidbody2D m_rigidbody;
+    private bool m_hasControl => GameManager.instance.hasControl;
     private Animator m_locomotion;
     
     [Header("Character")]
@@ -27,7 +26,7 @@ public class Character : LivingHitable
     } 
     private void Awake()
     {
-        m_rigidbody = GetComponent<Rigidbody2D>();
+        base.Awake();
         m_locomotion = GetComponent<Animator>();
     }
 
@@ -45,10 +44,12 @@ public class Character : LivingHitable
         Controller.OnDodgePress -= Dodge;
     }
 
-    private void Update()
+    protected void Update()
     {
+        base.Update();
         BufferManagment();
     }
+
     public void UpdateDirection()
     {
         Vector2 moveDir = Controller.lastValidDir;
@@ -81,6 +82,7 @@ public class Character : LivingHitable
         {
             m_locomotion.SetTrigger("Attack");
             m_currentAttackBuffer = m_attackBuffer;
+            m_currentDodgeBuffer = 0.0f;
         }
     }
     
@@ -90,11 +92,13 @@ public class Character : LivingHitable
         {
             m_locomotion.SetTrigger("Dodge");
             m_currentDodgeBuffer = m_dodgeBuffer;
+            m_currentAttackBuffer = 0.0f;
         }
     }
 
     protected override void OnDamaged(Vector2 _source, int _damage)
     {
+        base.OnDamaged(_source, _damage);
         if (m_hasControl)
         {
             m_locomotion.SetTrigger("Hit");

@@ -13,7 +13,6 @@ public class LocomotionStateHit : StateMachineBehaviour
         _animator.SetBool("canAttack", false);
         
         m_character.animator.SetTrigger("Hit");
-        m_character.velocity = Vector2.zero;  
     }
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
