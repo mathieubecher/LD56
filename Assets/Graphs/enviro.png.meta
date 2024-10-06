@@ -382,7 +382,7 @@ TextureImporter:
         width: 4
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -403,7 +403,7 @@ TextureImporter:
         width: 4
         height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -411,6 +411,27 @@ TextureImporter:
       bones: []
       spriteID: d6cf2dc84da7c3e4dad99b615ddff6d8
       internalID: -1024348463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enviro_12
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 8
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d7bf8e4bca1724cbf5a3ea641f251a
+      internalID: 818118688
       vertices: []
       indices: 
       edges: []
@@ -430,6 +451,7 @@ TextureImporter:
       enviro_1: 8853968368186672453
       enviro_10: 745576524
       enviro_11: -1024348463
+      enviro_12: 818118688
       enviro_2: -8568409474535872869
       enviro_3: -1255076004
       enviro_4: 1810967872
