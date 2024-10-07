@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 3279425006272395320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3495, z: 0}
+  m_LocalPosition: {x: 0, y: 0.45000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -197,13 +197,13 @@ MonoBehaviour:
   m_life: {fileID: 4090351020952473566}
   m_invulnerability: 0.2
   m_hitPush: 0.8
-  m_hitPushStrength: 5
+  m_hitPushStrength: 6.5
   m_hitPushFriction: 0.8
   m_animator: {fileID: 5925679054887834518}
   m_loot: {fileID: 2087092542475610728}
-  m_maxPursueDistance: 5
-  m_maxDetectionDistance: 3
-  m_pursueSpeed: 0.8
+  m_maxPursueDistance: 6.5
+  m_maxDetectionDistance: 4
+  m_pursueSpeed: 1
   m_pursueInertia: 0.2
 --- !u!114 &2087092542475610728
 MonoBehaviour:
@@ -295,7 +295,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0385, y: 0.077}
+  m_Offset: {x: 0, y: 0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -305,7 +305,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.285, y: 0.054}
+  m_Size: {x: 0.3, y: 0.1}
   m_EdgeRadius: 0.05
 --- !u!1 &5878189635695530918
 GameObject:
@@ -485,23 +485,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1020930697836101850, guid: f8cb797d12596c14ebfd527dcaa9ade4, type: 3}
       propertyPath: m_Size.x
-      value: 0.385
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1020930697836101850, guid: f8cb797d12596c14ebfd527dcaa9ade4, type: 3}
       propertyPath: m_Size.y
-      value: 0.154
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1020930697836101850, guid: f8cb797d12596c14ebfd527dcaa9ade4, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0385
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1020930697836101850, guid: f8cb797d12596c14ebfd527dcaa9ade4, type: 3}
       propertyPath: m_Offset.y
-      value: 0.077
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1020930697836101850, guid: f8cb797d12596c14ebfd527dcaa9ade4, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020930697836101850, guid: f8cb797d12596c14ebfd527dcaa9ade4, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 3538389920569236490, guid: f8cb797d12596c14ebfd527dcaa9ade4, type: 3}
       propertyPath: m_Name
@@ -513,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6760222063749418983, guid: f8cb797d12596c14ebfd527dcaa9ade4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3465
+      value: -0.45000002
       objectReference: {fileID: 0}
     - target: {fileID: 6760222063749418983, guid: f8cb797d12596c14ebfd527dcaa9ade4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -590,7 +594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9140237770825030348, guid: f6741e7e125c1d4408123681d40704ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3465
+      value: -0.45000002
       objectReference: {fileID: 0}
     - target: {fileID: 9140237770825030348, guid: f6741e7e125c1d4408123681d40704ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -671,7 +675,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0385, y: 0.077}
+  m_Offset: {x: 0, y: 0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -681,8 +685,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.385, y: 0.154}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.4, y: 0.2}
+  m_EdgeRadius: 0.05
 --- !u!4 &6944241233955727617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9140237770825030348, guid: f6741e7e125c1d4408123681d40704ca, type: 3}
