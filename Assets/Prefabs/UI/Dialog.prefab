@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_textBase: {fileID: 5311542741100805709}
   m_pixelSize: 0.1
+  m_waitBeforeSkip: 0.1
   m_lineMargin: 3
   m_dialogLength: 43
   m_arrow: {fileID: 7734034695082869340}

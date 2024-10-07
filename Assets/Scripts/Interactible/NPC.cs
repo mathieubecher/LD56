@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class NPC : Interactible
 {
+    [SerializeField] private Cinematic m_interact;
     public override void Interact()
     {
-        GameManager.frame.StartDialog(3);
+        CinematicManager.instance.Play(m_interact);
     }
 }

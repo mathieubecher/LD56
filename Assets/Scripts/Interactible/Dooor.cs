@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Dooor : Interactible
 {
+    [SerializeField] private Cinematic m_fail;
     public override void Interact()
     {
         if (GameManager.HasItem("Key"))
@@ -13,7 +14,7 @@ public class Dooor : Interactible
         }
         else
         {
-            GameManager.frame.StartDialog(3);
+            CinematicManager.instance.Play(m_fail);
         }
     }
 }

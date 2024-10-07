@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Dialog : MonoBehaviour
 {
+    public delegate void SimpleCallback();
+    private SimpleCallback m_dialogCallback;
+    
+    [SerializeField] private float m_waitBeforeSkip = 0.2f;
     [SerializeField] private Transform m_textBase;
     [SerializeField] private float m_pixelSize;
     [SerializeField] private int m_lineMargin;
@@ -13,11 +17,12 @@ public class Dialog : MonoBehaviour
     [SerializeField] private List<GameObject> m_redLetters;
     [SerializeField] private GameObject m_space;
     
+    private float m_drawDialogDuration;
     private bool m_isRedWord = false;
     private int m_nbWordChars = 0;
     private int m_visibleChars = 0;
     private float m_visibleCharTime;
-    private int m_dialogToDraw = 0;
+    private string m_dialogToDraw;
     
     private List<Letter> m_letters;
 
@@ -26,18 +31,9 @@ public class Dialog : MonoBehaviour
         m_letters = new List<Letter>();
     }
 
-    private void OnEnable()
-    {
-        Controller.OnContinuePress += Continue;
-    }
-
-    private void OnDisable()
-    {
-        Controller.OnContinuePress -= Continue;
-    }
-
     private void Update()
     {
+        m_drawDialogDuration += Time.unscaledDeltaTime;
         m_visibleCharTime -= Time.unscaledDeltaTime;
         if(m_visibleCharTime < 0.0f && m_visibleChars < m_letters.Count)
         {
@@ -50,22 +46,30 @@ public class Dialog : MonoBehaviour
         }
     }
 
-    public void StartDialog(int _dialogToDraw)
+    public void StartDialog(string _text, SimpleCallback _callback)
     {
-        GameManager.instance.Pause();
-        m_dialogToDraw = _dialogToDraw;
+        m_drawDialogDuration = 0.0f;
+        m_dialogToDraw = _text;
+        m_dialogCallback = _callback;
         DrawText();
+        Controller.OnContinuePress += Continue;
+        GameManager.Pause();
     }
+
+    public void EndDialog()
+    {
+        Controller.OnContinuePress -= Continue;
+        gameObject.SetActive(false);
+        m_dialogCallback?.Invoke();
+        m_dialogCallback = null;
+    }
+    
     public void Continue()
     {
+        if (m_drawDialogDuration < m_waitBeforeSkip) return;
         if (m_visibleChars >= m_letters.Count)
         {
-            if (m_dialogToDraw > 0) DrawText();
-            else
-            {
-                ResetText();
-                GameManager.instance.Resume();
-            }
+            EndDialog();
         }
         else
         {
@@ -96,7 +100,6 @@ public class Dialog : MonoBehaviour
 
     public void DrawText()
     {
-        --m_dialogToDraw;
         ResetText();
         gameObject.SetActive(true);
 

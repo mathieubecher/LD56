@@ -6,16 +6,16 @@ public class Menu : MonoBehaviour
 {
     public void Play()
     {
-        GameManager.instance.Play();
+        GameManager.Play();
     }
     
     public void Exit()
     {
-        GameManager.instance.Exit();
+        GameManager.Exit();
     }
 
     public void Pause()
     {
-        GameManager.instance.Pause();
+        GameManager.Pause();
     }
 }

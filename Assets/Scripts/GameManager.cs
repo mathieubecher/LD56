@@ -32,10 +32,13 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    [SerializeField] private List<ItemSprite> m_itemsSprites;
+    [SerializeField] private bool m_ignoreCinematic;
+    
     private bool m_hasControl = true;
     private Dictionary<string, int> m_items;
-    [SerializeField] private List<ItemSprite> m_itemsSprites;
-    public bool hasControl => m_hasControl;
+    public static bool hasControl => instance.m_hasControl;
+    public static bool ignoreCinematic => instance.m_ignoreCinematic;
     public static Frame frame => LevelManager.frame;
     public static Character character => LevelManager.character;
     
@@ -52,34 +55,46 @@ public class GameManager : MonoBehaviour
         m_items = new Dictionary<string, int>();
     }
     
-    public void Play()
+    public static void Play()
     {
         SceneManager.LoadScene("Level");
     }
     
-    public void Exit()
+    public static void Exit()
     {
         SceneManager.LoadScene("Main");
     }
     
-    public void Result()
+    public static void Result()
     {
         SceneManager.LoadScene("Result");
     }
 
-    public void Pause()
+    public static void Pause()
     {
         Time.timeScale = 0.0f;
-        m_hasControl = false;
+        instance.m_hasControl = false;
         OnPause?.Invoke();
     }
-    public void Resume()
+    public static void Resume()
     {
         Time.timeScale = 1.0f;
-        m_hasControl = true;
+        instance.m_hasControl = true;
         OnResume?.Invoke();
     }
 
+    public static void TakeControl()
+    {
+        Pause();
+        instance.m_hasControl = false;
+    }
+
+    public static void GiveControl()
+    {
+        Resume();
+        instance.m_hasControl = true;
+    }
+    
     public static bool HitRelation(string _hitbox, string _hurtbox)
     {
         return _hitbox != _hurtbox;
@@ -89,12 +104,6 @@ public class GameManager : MonoBehaviour
     {
         if (instance.m_items == null) return false;
         return instance.m_items.ContainsKey(_item) && instance.m_items[_item] > 0;
-    }
-
-    public static void GiveItem(string _item)
-    {
-        AddItem(_item, 1);
-        instance.StartCoroutine(instance.GiveItemCinematic(_item));
     }
 
     public static void UseItem(string _item, int _number)
@@ -114,13 +123,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private IEnumerator GiveItemCinematic(string _item)
+    public static ItemSprite GetItemSprite(string _item)
     {
-        Pause();
-        character.ReceiveItem(m_itemsSprites.Find(x => x.item == _item));
-        yield return new WaitForSecondsRealtime(2.0f);
-        frame.StartDialog(3);
+        return instance.m_itemsSprites.Find(x => x.item == _item);
     }
+    
     public static void PickItem(string _item)
     {
         switch (_item)

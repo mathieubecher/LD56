@@ -21,8 +21,8 @@ public class Frame : MonoBehaviour
     {
         m_animator.SetTrigger("Shake");
     }
-    public void StartDialog(int _dialogToDraw)
+    public void StartDialog(string _text, Dialog.SimpleCallback _callback)
     {
-        m_dialog.StartDialog(_dialogToDraw);
+        m_dialog.StartDialog(_text, _callback);
     }
 }

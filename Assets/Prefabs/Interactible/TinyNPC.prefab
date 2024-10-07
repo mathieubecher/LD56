@@ -216,6 +216,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c5fe9af81e92341a7b522481956242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_interact:
+    sequence:
+    - '[Dialog=Bla bla bla]'
+    - '[Dialog=Bla bla bla]'
+    - '[Dialog=Bla bla bla]'
+    cameras: []
 --- !u!61 &9217290884921435614
 BoxCollider2D:
   m_ObjectHideFlags: 0

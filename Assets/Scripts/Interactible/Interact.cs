@@ -19,7 +19,7 @@ public class Interact : MonoBehaviour
 
     private void Press()
     {
-        if (GameManager.instance.hasControl)
+        if (GameManager.hasControl)
         {
             if (m_contact)
             {

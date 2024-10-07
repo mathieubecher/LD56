@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_contains
       value: Key
       objectReference: {fileID: 0}
+    - target: {fileID: 8097375060251822497, guid: b421fc0c7ee0a894caa97f3646bff473, type: 3}
+      propertyPath: 'm_openCinematic.sequence.Array.data[0]'
+      value: '[ShowItem=Key|Wait=1.5]'
+      objectReference: {fileID: 0}
     - target: {fileID: 9099286729557432308, guid: b421fc0c7ee0a894caa97f3646bff473, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.35

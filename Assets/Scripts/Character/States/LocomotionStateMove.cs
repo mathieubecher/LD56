@@ -15,7 +15,7 @@ public class LocomotionStateMove : StateMachineBehaviour
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
 
-        if (!GameManager.instance.hasControl)
+        if (!GameManager.hasControl)
         {
             m_character.animator.SetBool("move", false);
             return;

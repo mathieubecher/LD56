@@ -47,7 +47,7 @@ public class Monster : LivingHitable
 
     public virtual void UpdateDirection()
     {
-        if (!GameManager.instance.hasControl) return;
+        if (!GameManager.hasControl) return;
         float minSpeed = 0.1f;
         float minOrientation = 0.7f;
         Vector2 moveDir = m_rigidbody.velocity.normalized;

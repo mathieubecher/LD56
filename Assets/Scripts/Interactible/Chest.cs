@@ -8,6 +8,7 @@ public class Chest : Interactible
     [SerializeField] private SpriteRenderer m_chestSprite;
     [SerializeField] private Sprite m_openSprite;
     [SerializeField] private string m_contains;
+    [SerializeField] private Cinematic m_openCinematic;
 
     private bool m_open;
 
@@ -26,6 +27,7 @@ public class Chest : Interactible
         
         m_open = true;
         m_chestSprite.sprite = m_openSprite;
-        GameManager.GiveItem(m_contains);
+        GameManager.AddItem(m_contains, 1);
+        CinematicManager.instance.Play(m_openCinematic);
     }
 }

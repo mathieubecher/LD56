@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Character : LivingHitable
 {
-    private bool m_hasControl => GameManager.instance.hasControl;
     private Animator m_locomotion;
     
     [Header("Character")]
@@ -21,6 +20,8 @@ public class Character : LivingHitable
     public Animator animator => m_animator;
     public Life life => m_life;
     public int currentLife => m_life.currentLife;
+    private bool hasControl => GameManager.hasControl;
+    public Animator locomotion => m_locomotion;
     public Vector2 velocity
     {
         get => m_rigidbody.velocity;
@@ -30,6 +31,7 @@ public class Character : LivingHitable
     {
         base.Awake();
         m_locomotion = GetComponent<Animator>();
+        this.gameObject.GetInstanceID();
     }
 
     private void OnEnable()
@@ -56,7 +58,7 @@ public class Character : LivingHitable
 
     public void UpdateDirection()
     {
-        if (!GameManager.instance.hasControl) return;
+        if (!hasControl) return;
         
         Vector2 moveDir = Controller.lastValidDir;
         m_animator.SetBool("side", math.abs(moveDir.x) > 0.1f  && (m_animator.GetBool("side") || math.abs(moveDir.y) < 0.1f));
@@ -84,7 +86,7 @@ public class Character : LivingHitable
     }
     private void Attack()
     {
-        if (m_hasControl && GameManager.HasItem("Sword"))
+        if (hasControl && GameManager.HasItem("Sword"))
         {
             m_locomotion.SetTrigger("Attack");
             m_currentAttackBuffer = m_attackBuffer;
@@ -94,7 +96,7 @@ public class Character : LivingHitable
     
     private void Dodge()
     {
-        if (m_hasControl)
+        if (hasControl)
         {
             m_locomotion.SetTrigger("Dodge");
             m_currentDodgeBuffer = m_dodgeBuffer;
@@ -105,7 +107,7 @@ public class Character : LivingHitable
     protected override void OnDamaged(Vector2 _source, int _damage)
     {
         base.OnDamaged(_source, _damage);
-        if (m_hasControl)
+        if (hasControl)
         {
             m_locomotion.SetTrigger("Hit");
             GameManager.frame.Shake();
@@ -124,7 +126,7 @@ public class Character : LivingHitable
     private IEnumerator Respawn()
     {
         yield return new WaitForSecondsRealtime(2.0f);
-        GameManager.instance.Play();
+        GameManager.Play();
     }
 
     public void ReceiveItem(ItemSprite _item)
