@@ -178,8 +178,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1583169698875824966}
-  - component: {fileID: 4828991190601735964}
   - component: {fileID: 7196247420524071780}
+  - component: {fileID: 4828991190601735964}
   - component: {fileID: 2503933447517649953}
   - component: {fileID: 8973085095709176306}
   - component: {fileID: 135712968244568232}
@@ -212,18 +212,6 @@ Transform:
   - {fileID: 4294299075196557228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4828991190601735964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4644475386815684255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3662b1beba1d0f24fb70cad68a00b69a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7196247420524071780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,9 +232,29 @@ MonoBehaviour:
   m_hitPushStrength: 8
   m_hitPushFriction: 0.9
   m_animator: {fileID: 135712968244568232}
-  m_receive: {fileID: 3264795870444313692}
+  m_receiveItem: {fileID: 4828991190601735964}
   m_attackBuffer: 0.2
   m_dodgeBuffer: 0.2
+  m_castBoxSize: {x: 0.2, y: 0.2}
+  m_castOffset: {x: 0, y: 0.1}
+  m_castDist: 0.1
+  m_castLayerMask:
+    serializedVersion: 2
+    m_Bits: 257
+--- !u!114 &4828991190601735964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4644475386815684255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3662b1beba1d0f24fb70cad68a00b69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 135712968244568232}
+  m_receive: {fileID: 3264795870444313692}
 --- !u!114 &2503933447517649953
 MonoBehaviour:
   m_ObjectHideFlags: 0

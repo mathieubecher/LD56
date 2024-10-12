@@ -27,7 +27,13 @@ public class Character : LivingHitable
     {
         get => m_rigidbody.velocity;
         set => m_rigidbody.velocity = value;
-    } 
+    }
+
+    [Header("BoxCast")] 
+    [SerializeField] private Vector2 m_castBoxSize;
+    [SerializeField] private Vector2 m_castOffset;
+    [SerializeField] private float m_castDist;
+    [SerializeField] private LayerMask m_castLayerMask;
     protected override void Awake()
     {
         base.Awake();
@@ -53,6 +59,40 @@ public class Character : LivingHitable
     {
         base.Update();
         BufferManagment();
+    }
+    
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        
+        if (!hasControl) return;
+        CheckCollision();
+    }
+
+    private void CheckCollision()
+    {
+        Vector2 direction = Controller.moveDir;
+        if (Controller.tilt > 0.0f && (direction.x == 0.0f || direction.y == 0.0f))
+        {
+            Vector2 origin = (Vector2)transform.position + m_castOffset;
+            Vector2 size = m_castBoxSize;
+            float angle = 0.0f;
+            float distance = m_castDist;
+            RaycastHit2D[] cast = Physics2D.BoxCastAll(origin, size, angle, direction, distance, m_castLayerMask);
+            if (cast.Length > 0)
+            {
+                foreach (var hit in cast)
+                {
+                    if(hit.collider.isTrigger) continue;
+                    if(!m_animator.GetBool("push")) m_animator.SetTrigger("StartPush");
+                    m_animator.SetBool("push", true);
+                    return;
+                }
+            }
+        }
+        
+        if(m_animator.GetBool("push")) m_animator.SetTrigger("Resume");
+        m_animator.SetBool("push", false);
     }
 
     public void UpdateDirection()
@@ -118,8 +158,7 @@ public class Character : LivingHitable
         m_locomotion.SetBool("dead", true);
         GameManager.frame.Shake();
         StartCoroutine(Respawn());
-
-
+        
     }
 
     private IEnumerator Respawn()

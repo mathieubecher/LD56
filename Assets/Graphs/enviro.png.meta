@@ -232,8 +232,8 @@ TextureImporter:
         serializedVersion: 2
         x: 21
         y: 29
-        width: 4
-        height: 6
+        width: 5
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -419,10 +419,10 @@ TextureImporter:
       name: enviro_12
       rect:
         serializedVersion: 2
-        x: 33
-        y: 8
-        width: 11
-        height: 11
+        x: 34
+        y: 9
+        width: 9
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,6 +432,69 @@ TextureImporter:
       bones: []
       spriteID: 67d7bf8e4bca1724cbf5a3ea641f251a
       internalID: 818118688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enviro_13
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 7
+        width: 5
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a19031b52a35c74d91e462269597bf3
+      internalID: -1934123182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enviro_14
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 7
+        width: 4
+        height: 2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3b9c03474c30942af435471ab75ca5
+      internalID: -1772737003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enviro_15
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 3
+        width: 6
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b37efd9be9248244a648b59a9ecfacd
+      internalID: -1346146385
       vertices: []
       indices: 
       edges: []
@@ -452,6 +515,9 @@ TextureImporter:
       enviro_10: 745576524
       enviro_11: -1024348463
       enviro_12: 818118688
+      enviro_13: -1934123182
+      enviro_14: -1772737003
+      enviro_15: -1346146385
       enviro_2: -8568409474535872869
       enviro_3: -1255076004
       enviro_4: 1810967872

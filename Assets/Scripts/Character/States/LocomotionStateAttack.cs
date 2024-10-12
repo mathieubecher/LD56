@@ -14,6 +14,7 @@ public class LocomotionStateAttack : StateMachineBehaviour
         //Debug.Log("Enter Attack State");
         if(!m_character) m_character = _animator.GetComponent<Character>();
         _animator.SetBool("canAction", false);
+        _animator.SetBool("move", false);
         
         m_character.UpdateDirection();
         m_character.velocity = Vector2.zero;  
@@ -27,7 +28,6 @@ public class LocomotionStateAttack : StateMachineBehaviour
         {
             _animator.SetBool("canAction", true);
         }
-        
     }
 
     override public void OnStateExit(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LocomotionStatePush : StateMachineBehaviour
 {
-    [SerializeField] private float m_dodgeSpeed = 3.0f;
     [SerializeField] private AnimationCurve m_positionOverTime;
     private Character m_character;
     private Vector2 m_pushDirection;
