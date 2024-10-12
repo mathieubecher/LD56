@@ -12,13 +12,12 @@ public class LocomotionStateDodge : StateMachineBehaviour
     
     override public void OnStateEnter(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
-        m_character = _animator.GetComponent<Character>();
-        _animator.SetBool("canDodge", false);
-        _animator.SetBool("canAttack", false);
+        //Debug.Log("Enter Dodge State");
+        if(!m_character) m_character = _animator.GetComponent<Character>();
+        _animator.SetBool("canAction", false);
         m_dodgeDirection = Controller.lastValidDir;
         
         m_character.UpdateDirection();
-        m_character.animator.SetTrigger("Dodge");
         m_timer = 0.0f;
     }
     
@@ -30,7 +29,16 @@ public class LocomotionStateDodge : StateMachineBehaviour
 
     override public void OnStateExit(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
-        _animator.SetBool("canDodge", true);
-        _animator.SetBool("canAttack", true);
+        _animator.SetBool("canAction", true);
+    }
+    
+    override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
+    {
+        Debug.Log("Enter Dodge SubState");
+    }
+
+    override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
+    {
+        Debug.Log("Exit Dodge SubState");
     }
 }

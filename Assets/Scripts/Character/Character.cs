@@ -10,7 +10,7 @@ public class Character : LivingHitable
     
     [Header("Character")]
     [SerializeField] private Animator m_animator;
-    [SerializeField] private SpriteRenderer m_receive;
+    [SerializeField] private ReceiveItem m_receiveItem;
     [SerializeField] private float m_attackBuffer = 0.2f;
     [SerializeField] private float m_dodgeBuffer = 0.2f;
     
@@ -18,6 +18,7 @@ public class Character : LivingHitable
     private float m_currentDodgeBuffer;
 
     public Animator animator => m_animator;
+    public ReceiveItem receiveItem => m_receiveItem;
     public Life life => m_life;
     public int currentLife => m_life.currentLife;
     private bool hasControl => GameManager.hasControl;
@@ -27,30 +28,28 @@ public class Character : LivingHitable
         get => m_rigidbody.velocity;
         set => m_rigidbody.velocity = value;
     } 
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
         m_locomotion = GetComponent<Animator>();
         this.gameObject.GetInstanceID();
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         base.OnEnable();
         Controller.OnAttackPress += Attack;
         Controller.OnDodgePress += Dodge;
-        GameManager.OnResume += Resume;
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
         base.OnDisable();
         Controller.OnAttackPress -= Attack;
         Controller.OnDodgePress -= Dodge;
-        GameManager.OnResume -= Resume;
     }
 
-    protected void Update()
+    protected override void Update()
     {
         base.Update();
         BufferManagment();
@@ -129,14 +128,4 @@ public class Character : LivingHitable
         GameManager.Play();
     }
 
-    public void ReceiveItem(ItemSprite _item)
-    {
-        m_receive.sprite = _item.sprite;
-        m_animator.SetTrigger("Receive");
-    }
-
-    public void Resume()
-    {
-        m_animator.SetTrigger("Resume");
-    }
 }

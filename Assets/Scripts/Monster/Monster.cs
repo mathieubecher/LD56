@@ -10,7 +10,7 @@ public class Monster : LivingHitable
     [SerializeField] private Loot m_loot;
     
 
-    private void FixedUpdate()
+    protected override void FixedUpdate()
     {
         base.FixedUpdate();
         if (m_life.dead) return;

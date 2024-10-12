@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
         {
             if (!m_instance)
             {
-                m_instance = FindObjectOfType<LevelManager>();
+                m_instance = FindAnyObjectByType<LevelManager>();
             }
             return m_instance;
         }

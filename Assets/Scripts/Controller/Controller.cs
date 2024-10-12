@@ -15,7 +15,7 @@ public class Controller : MonoBehaviour
         {
             if (!m_instance)
             {
-                m_instance = FindObjectOfType<Controller>();
+                m_instance = FindAnyObjectByType<Controller>();
             }
             return m_instance;
         }

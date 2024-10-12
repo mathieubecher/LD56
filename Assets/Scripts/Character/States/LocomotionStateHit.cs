@@ -11,8 +11,6 @@ public class LocomotionStateHit : StateMachineBehaviour
         m_character = _animator.GetComponent<Character>();
         _animator.SetBool("canDodge", false);
         _animator.SetBool("canAttack", false);
-        
-        m_character.animator.SetTrigger("Hit");
     }
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)

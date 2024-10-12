@@ -15,17 +15,17 @@ public class LivingHitable : Hitable
     private float m_invulnerabilityTimer;
     protected float m_hitPushTimer;
 
-    protected void Awake()
+    protected override void Awake()
     {
         m_rigidbody = GetComponent<Rigidbody2D>();
     }
-    protected void Update()
+    protected override void Update()
     {
         m_invulnerabilityTimer -= Time.deltaTime;
         m_hitPushTimer -= Time.deltaTime;
     }
     
-    protected void FixedUpdate()
+    protected override void FixedUpdate()
     {
         if (m_hitPushTimer > 0.0f)
         {

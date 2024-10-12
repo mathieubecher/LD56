@@ -8,7 +8,7 @@ public class LocomotionStateDead : StateMachineBehaviour
     
     override public void OnStateEnter(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
-        m_character = _animator.GetComponent<Character>();
+        if(!m_character) m_character = _animator.GetComponent<Character>();
         m_character.animator.SetBool("dead", true);
     }
     

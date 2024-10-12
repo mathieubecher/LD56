@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         {
             if (!m_instance)
             {
-                m_instance = FindObjectOfType<GameManager>();
+                m_instance = FindAnyObjectByType<GameManager>();
             }
             return m_instance;
         }
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     public static Frame frame => LevelManager.frame;
     public static Character character => LevelManager.character;
     
-    void Awake()
+    private void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Manager");
 
@@ -52,9 +52,13 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void OnEnable()
+    {
         m_items = new Dictionary<string, int>();
     }
-    
+
     public static void Play()
     {
         SceneManager.LoadScene("Level");

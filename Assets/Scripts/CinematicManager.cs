@@ -24,7 +24,7 @@ public class CinematicManager : MonoBehaviour
         {
             if (!m_instance)
             {
-                m_instance = FindObjectOfType<CinematicManager>();
+                m_instance = FindAnyObjectByType<CinematicManager>();
             }
             return m_instance;
         }
@@ -118,10 +118,10 @@ public class CinematicManager : MonoBehaviour
                     GameManager.character.animator.SetTrigger(splitAction[0]);
                     break;
                 case "ShowItem":
-                    GameManager.character.ReceiveItem(GameManager.GetItemSprite(splitAction[1]));
+                    GameManager.character.receiveItem.Receive(GameManager.GetItemSprite(splitAction[1]));
                     break;
                     case "StopShowItem":
-                    GameManager.character.Resume();
+                    GameManager.character.receiveItem.Resume();
                     break;
                 case "Dialog":
                     ++m_request;

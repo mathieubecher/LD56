@@ -18,9 +18,9 @@ public class Pursue : Monster
     private float playerDistance => Vector2.Distance(transform.position, GameManager.character.transform.position);
     private Vector2 playerDirection => ((Vector2)GameManager.character.transform.position - (Vector2)transform.position).normalized;
     
-    private void Update()
+    protected override void Update()
     {
-        base.Update();
+        base.Update();  
 
         if (playerDistance <= m_maxDetectionDistance)
         {
