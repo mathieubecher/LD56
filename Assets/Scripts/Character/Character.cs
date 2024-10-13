@@ -9,21 +9,23 @@ public class Character : LivingHitable
     private Animator m_locomotion;
     
     [Header("Character")]
-    [SerializeField] private Animator m_animator;
     [SerializeField] private ReceiveItem m_receiveItem;
+    [SerializeField] private Grab m_grab;
     [SerializeField] private DetectCollision m_detect;
     [SerializeField] private float m_attackBuffer = 0.2f;
     [SerializeField] private float m_dodgeBuffer = 0.2f;
+    [SerializeField] private float m_grabBuffer = 0.2f;
     
     private float m_currentAttackBuffer;
     private float m_currentDodgeBuffer;
-
-    public Animator animator => m_animator;
+    private float m_currentGrabBuffer;
+    
+    public bool hasControl => GameManager.hasControl;
     public ReceiveItem receiveItem => m_receiveItem;
+    public Grab grab => m_grab;
     public DetectCollision detect => m_detect;
     public Life life => m_life;
     public int currentLife => m_life.currentLife;
-    private bool hasControl => GameManager.hasControl;
     public Animator locomotion => m_locomotion;
     public Vector2 velocity
     {
@@ -35,7 +37,6 @@ public class Character : LivingHitable
     {
         base.Awake();
         m_locomotion = GetComponent<Animator>();
-        this.gameObject.GetInstanceID();
     }
 
     protected override void OnEnable()
@@ -63,14 +64,7 @@ public class Character : LivingHitable
         base.FixedUpdate();
         
         if (!hasControl) return;
-        
-        Vector2 direction = Controller.moveDir;
-        bool isContact = m_detect.isContact && Controller.tilt > 0.0f && (direction.x == 0.0f || direction.y == 0.0f);
-        
-        if(!m_animator.GetBool("push") && isContact) m_animator.SetTrigger("StartPush");
-        else if(m_animator.GetBool("push") && !isContact) m_animator.SetTrigger("Resume");
-        
-        m_animator.SetBool("push", isContact);
+        Push();
     }
 
     public void UpdateDirection()
@@ -78,11 +72,11 @@ public class Character : LivingHitable
         if (!hasControl) return;
         
         Vector2 moveDir = Controller.lastValidDir;
-        m_animator.SetBool("side", math.abs(moveDir.x) > 0.1f  && (m_animator.GetBool("side") || math.abs(moveDir.y) < 0.1f));
-        m_animator.SetBool("north", moveDir.y >= 0.1f && (m_animator.GetBool("north") || math.abs(moveDir.x) < 0.1f));
-        m_animator.SetBool("south", moveDir.y <= -0.1f && (m_animator.GetBool("south") || math.abs(moveDir.x) < 0.1f));
+        m_locomotion.SetBool("side", math.abs(moveDir.x) > 0.1f  && (m_locomotion.GetBool("side") || math.abs(moveDir.y) < 0.1f));
+        m_locomotion.SetBool("north", moveDir.y >= 0.1f && (m_locomotion.GetBool("north") || math.abs(moveDir.x) < 0.1f));
+        m_locomotion.SetBool("south", moveDir.y <= -0.1f && (m_locomotion.GetBool("south") || math.abs(moveDir.x) < 0.1f));
 
-        if(m_animator.GetBool("side")) transform.localScale = new Vector3(math.sign(moveDir.x), 1.0f, 1.0f);
+        if(m_locomotion.GetBool("side")) transform.localScale = new Vector3(math.sign(moveDir.x), 1.0f, 1.0f);
     }
 
     
@@ -100,6 +94,12 @@ public class Character : LivingHitable
             if (m_currentDodgeBuffer <= 0.0f)
                 m_locomotion.ResetTrigger("Dodge");
         }
+        if (m_currentGrabBuffer > 0.0f)
+        {
+            m_currentGrabBuffer -= Time.deltaTime;
+            if (m_currentGrabBuffer <= 0.0f)
+                m_locomotion.ResetTrigger("Grab");
+        }
     }
     private void Attack()
     {
@@ -108,6 +108,7 @@ public class Character : LivingHitable
             m_locomotion.SetTrigger("Attack");
             m_currentAttackBuffer = m_attackBuffer;
             m_currentDodgeBuffer = 0.0f;
+            m_currentGrabBuffer = 0.0f;
         }
     }
     
@@ -118,9 +119,21 @@ public class Character : LivingHitable
             m_locomotion.SetTrigger("Dodge");
             m_currentDodgeBuffer = m_dodgeBuffer;
             m_currentAttackBuffer = 0.0f;
+            m_currentGrabBuffer = 0.0f;
         }
     }
-
+    
+    private void Push()
+    {
+        Vector2 direction = Controller.moveDir;
+        bool isContact = m_detect.isContact && Controller.tilt > 0.0f && (direction.x == 0.0f || direction.y == 0.0f);
+        
+        if(!m_locomotion.GetBool("push") && isContact) m_locomotion.SetTrigger("StartPush");
+        else if(m_locomotion.GetBool("push") && !isContact) m_locomotion.SetTrigger("Resume");
+        
+        m_locomotion.SetBool("push", isContact);
+    }
+    
     protected override void OnDamaged(Vector2 _source, int _damage)
     {
         base.OnDamaged(_source, _damage);

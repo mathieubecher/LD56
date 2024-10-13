@@ -51,6 +51,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Grab",
+                    "type": "Button",
+                    "id": "75c7e7c4-0a9b-4aef-b446-dd090e228eb6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Restart",
                     "type": "Button",
                     "id": "7af4d279-b0a5-4deb-a3bb-e50b69c63e9f",
@@ -333,6 +342,28 @@
                     "processors": "",
                     "groups": "Mouse & Keyboard",
                     "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6785cf23-7978-433e-88fa-c9f2c72bea33",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eb133090-27b2-46ef-ab2d-a5ed3705eebb",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse & Keyboard",
+                    "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

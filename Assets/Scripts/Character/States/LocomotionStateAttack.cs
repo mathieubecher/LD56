@@ -13,6 +13,8 @@ public class LocomotionStateAttack : StateMachineBehaviour
     {
         //Debug.Log("Enter Attack State");
         if(!m_character) m_character = _animator.GetComponent<Character>();
+        m_character.grab.ReleaseObject();
+        
         _animator.SetBool("canAction", false);
         _animator.SetBool("move", false);
         
@@ -33,15 +35,5 @@ public class LocomotionStateAttack : StateMachineBehaviour
     override public void OnStateExit(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
         _animator.SetBool("canAction", true);
-    }
-    
-    override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
-    {
-        //Debug.Log("Enter Attack SubState");
-    }
-
-    override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
-    {
-        //Debug.Log("Exit Attack SubState");
     }
 }

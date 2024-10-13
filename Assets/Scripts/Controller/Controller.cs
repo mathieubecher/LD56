@@ -41,6 +41,9 @@ public class Controller : MonoBehaviour
     public static event SimpleEvent OnAttackPress;
     public static event SimpleEvent OnAttackRelease;
     
+    public static event SimpleEvent OnGrabPress;
+    public static event SimpleEvent OnGrabRelease;
+    
     public static event SimpleEvent OnResetPress;
     public static event SimpleEvent OnContinuePress;
     public static event SimpleEvent OnPausePress;
@@ -95,6 +98,18 @@ public class Controller : MonoBehaviour
         else if (_context.canceled)
         {
             OnAttackRelease?.Invoke();
+        }
+    }
+
+    public void ReadGrabInput(InputAction.CallbackContext _context)
+    {
+        if (_context.performed)
+        {
+            OnGrabPress?.Invoke();
+        }
+        else if (_context.canceled)
+        {
+            OnGrabRelease?.Invoke();
         }
     }
     

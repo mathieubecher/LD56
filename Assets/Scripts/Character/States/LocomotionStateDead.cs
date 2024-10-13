@@ -9,7 +9,7 @@ public class LocomotionStateDead : StateMachineBehaviour
     override public void OnStateEnter(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
         if(!m_character) m_character = _animator.GetComponent<Character>();
-        m_character.animator.SetBool("dead", true);
+        _animator.SetBool("dead", true);
     }
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
@@ -21,6 +21,6 @@ public class LocomotionStateDead : StateMachineBehaviour
     {
         _animator.SetBool("canDodge", true);
         _animator.SetBool("canAttack", true);
-        m_character.animator.SetBool("dead", false);
+        _animator.SetBool("dead", false);
     }
 }

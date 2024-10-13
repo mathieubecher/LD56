@@ -210,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583169698875824966}
   - component: {fileID: 7196247420524071780}
+  - component: {fileID: 4608932582441463896}
   - component: {fileID: 2127456930978527202}
   - component: {fileID: 4828991190601735964}
   - component: {fileID: 2503933447517649953}
@@ -264,11 +265,25 @@ MonoBehaviour:
   m_hitPush: 0.3
   m_hitPushStrength: 8
   m_hitPushFriction: 0.9
-  m_animator: {fileID: 135712968244568232}
   m_receiveItem: {fileID: 4828991190601735964}
+  m_grab: {fileID: 4608932582441463896}
   m_detect: {fileID: 2127456930978527202}
   m_attackBuffer: 0.2
   m_dodgeBuffer: 0.2
+  m_grabBuffer: 0.2
+--- !u!114 &4608932582441463896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4644475386815684255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2154494333cc74c9dd51a706e9e6e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_character: {fileID: 7196247420524071780}
 --- !u!114 &2127456930978527202
 MonoBehaviour:
   m_ObjectHideFlags: 0

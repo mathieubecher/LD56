@@ -115,7 +115,7 @@ public class CinematicManager : MonoBehaviour
                         StartCoroutine(Wait(duration));
                     break;
                 case "PlayAction":
-                    GameManager.character.animator.SetTrigger(splitAction[0]);
+                    GameManager.character.locomotion.SetTrigger(splitAction[0]);
                     break;
                 case "ShowItem":
                     GameManager.character.receiveItem.Receive(GameManager.GetItemSprite(splitAction[1]));
