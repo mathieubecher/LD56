@@ -5,12 +5,13 @@ using UnityEngine;
 public class LocomotionStateMove : StateMachineBehaviour
 {
     [SerializeField] private float m_speed = 1.0f;
+    [SerializeField] private bool m_grab = false;
     private Character m_character;
     
     override public void OnStateEnter(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
-        //Debug.Log("Enter Move State");
         if(!m_character) m_character = _animator.GetComponent<Character>();
+        if(!m_grab) m_character.grab.ReleaseObject();
     }
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)

@@ -270,7 +270,6 @@ MonoBehaviour:
   m_detect: {fileID: 2127456930978527202}
   m_attackBuffer: 0.2
   m_dodgeBuffer: 0.2
-  m_grabBuffer: 0.2
 --- !u!114 &4608932582441463896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_character: {fileID: 7196247420524071780}
+  m_grabPoint: {fileID: 1779329929975319865}
 --- !u!114 &2127456930978527202
 MonoBehaviour:
   m_ObjectHideFlags: 0

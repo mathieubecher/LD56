@@ -14,7 +14,6 @@ public class Character : LivingHitable
     [SerializeField] private DetectCollision m_detect;
     [SerializeField] private float m_attackBuffer = 0.2f;
     [SerializeField] private float m_dodgeBuffer = 0.2f;
-    [SerializeField] private float m_grabBuffer = 0.2f;
     
     private float m_currentAttackBuffer;
     private float m_currentDodgeBuffer;

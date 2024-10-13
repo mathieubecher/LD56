@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 339961412425533009}
   - component: {fileID: 9116226920483371160}
-  - component: {fileID: 3194234118229330995}
+  - component: {fileID: 5045098244380759784}
   - component: {fileID: 2199880465973342253}
   - component: {fileID: 478346390383213336}
   m_Layer: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
   m_spriteRenderer: {fileID: 5564379190716292610}
   m_breakSprite: {fileID: -2124720221, guid: 64600ac8a71be464a9348f6d19178cc2, type: 3}
   m_collider: {fileID: 478346390383213336}
---- !u!114 &3194234118229330995
+--- !u!114 &5045098244380759784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,9 +63,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2463682450510941172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bda4b7fbe2040a642a5d33fdd2a7e026, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ff47a33cda8dd943baf4fd807b75b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_shadow: {fileID: 6020862220939476949}
+  m_physic: {fileID: 478346390383213336}
   m_hurtbox: {fileID: 7156511719610842158}
 --- !u!114 &2199880465973342253
 MonoBehaviour:
