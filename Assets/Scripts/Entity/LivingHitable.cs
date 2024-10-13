@@ -33,7 +33,7 @@ public class LivingHitable : Hitable
         }
         else if(m_life.dead) m_rigidbody.velocity = Vector2.zero;
     }
-    protected override void Hit(Vector2 _source, int _damage)
+    public override void Hit(Vector2 _source, int _damage)
     {
         if (m_invulnerabilityTimer > 0.0f) return;
         if (m_life.Hit(_damage))

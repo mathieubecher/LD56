@@ -11,7 +11,7 @@ public class LocomotionStateMove : StateMachineBehaviour
     override public void OnStateEnter(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
         if(!m_character) m_character = _animator.GetComponent<Character>();
-        if(!m_grab) m_character.grab.ReleaseObject();
+        if(!m_grab) m_character.grab.ReleaseObject(m_character.transform.position);
     }
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
@@ -30,15 +30,5 @@ public class LocomotionStateMove : StateMachineBehaviour
     override public void OnStateExit(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
         //m_character.animator.SetBool("move", false);
-    }
-    
-    override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
-    {
-        //Debug.Log("Enter Move SubState");
-    }
-
-    override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
-    {
-        //Debug.Log("Exit Move SubState");
     }
 }

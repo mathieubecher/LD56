@@ -68,7 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_shadow: {fileID: 6020862220939476949}
   m_physic: {fileID: 478346390383213336}
-  m_hurtbox: {fileID: 7156511719610842158}
+  m_breakable: {fileID: 9116226920483371160}
 --- !u!114 &2199880465973342253
 MonoBehaviour:
   m_ObjectHideFlags: 0

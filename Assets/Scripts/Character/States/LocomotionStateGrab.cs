@@ -8,6 +8,8 @@ public class LocomotionStateGrab : StateMachineBehaviour
         //Debug.Log("Enter Dodge State");
         if(!m_character) m_character = _animator.GetComponent<Character>();
         m_character.grab.GrabObject(m_character.detect.grab);
+        m_character.velocity = Vector2.zero;
+        _animator.SetBool("canAction", false);
     }
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
@@ -16,13 +18,6 @@ public class LocomotionStateGrab : StateMachineBehaviour
 
     override public void OnStateExit(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
-    }
-    
-    override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
-    {
-    }
-
-    override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
-    {
+        _animator.SetBool("canAction", true);
     }
 }

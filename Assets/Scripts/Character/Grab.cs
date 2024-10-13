@@ -26,8 +26,8 @@ public class Grab : MonoBehaviour
             Debug.Log(m_character.detect.grab);
             bool isGrabbing = m_character.locomotion.GetBool("grab");
             
-            if(!isGrabbing && m_character.detect.grab) m_character.locomotion.SetTrigger("Grab");
-            else if(isGrabbing) m_character.locomotion.SetTrigger("Launch");
+            if(!isGrabbing && m_character.detect.grab) m_character.Grab();
+            else if(isGrabbing) m_character.Launch();
             
             m_character.locomotion.SetBool("grab", !isGrabbing);
         }
@@ -40,21 +40,19 @@ public class Grab : MonoBehaviour
         m_grab.Grab();
         m_grab.transform.parent = m_grabPoint;
         m_grab.transform.localPosition = Vector3.zero;
-        Debug.Log("Grab");
     }
 
-    public void LaunchObject()
+    public void LaunchObject(Vector2 _pos)
     {
-        ReleaseObject(); // TODO create action
+        ReleaseObject(_pos); //TODO create action
     }
     
-    public void ReleaseObject()
+    public void ReleaseObject(Vector2 _pos)
     {
         if (!m_grab) return;
-        m_grab.Release();
+        m_grab.Release(_pos);
         m_grab.transform.parent = null;
         m_grab = null;
-        Debug.Log("Release");
     }
 
 }

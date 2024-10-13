@@ -9,7 +9,7 @@ public class Breakable : Hitable
     [SerializeField] private Collider2D m_collider;
     private bool m_break;
     
-    protected override void Hit(Vector2 _source, int _damage)
+    public override void Hit(Vector2 _source, int _damage)
     {
         if (m_break) return;
         

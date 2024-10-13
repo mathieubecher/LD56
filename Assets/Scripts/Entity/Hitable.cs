@@ -6,7 +6,7 @@ public class Hitable : MonoBehaviour
 {
     [Header("Hitable")]
     [SerializeField] private Hurtbox m_hurtbox;
-
+    public Hurtbox hurtbox => m_hurtbox;
     protected virtual void Awake()
     {
         
@@ -22,7 +22,7 @@ public class Hitable : MonoBehaviour
         m_hurtbox.OnHit -= Hit;
     }
     
-    protected virtual void Hit(Vector2 _source, int _damage)
+    public virtual void Hit(Vector2 _source, int _damage)
     {
         
     }

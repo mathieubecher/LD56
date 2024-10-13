@@ -14,14 +14,13 @@ public class DetectCollision : MonoBehaviour
     [SerializeField] private LayerMask m_castLayerMask;
     [Header("Check Case")]
     [SerializeField] private float m_checkCaseRadius;
-    [Header("Debug")]
-    [SerializeField] private Collider2D m_contact;
-    [SerializeField] private float m_nearDistance;
+    
+    private Collider2D m_contact;
+    private float m_nearDistance;
 
     public bool isContact => m_contact && m_nearDistance <= m_contactDist;
     public bool isWearable => m_contact && m_contact.CompareTag("Wearable");
     public GrabObject grab => m_contact ? m_contact.GetComponent<GrabObject>() : null;
-
     public Collider2D contact => m_contact;
     public float nearDistance => m_nearDistance;
     

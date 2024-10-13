@@ -14,6 +14,7 @@ public class Character : LivingHitable
     [SerializeField] private DetectCollision m_detect;
     [SerializeField] private float m_attackBuffer = 0.2f;
     [SerializeField] private float m_dodgeBuffer = 0.2f;
+    [SerializeField] private float m_grabBuffer = 0.2f;
     
     private float m_currentAttackBuffer;
     private float m_currentDodgeBuffer;
@@ -81,19 +82,20 @@ public class Character : LivingHitable
     
     private void BufferManagment()
     {
-        if (m_currentAttackBuffer > 0.0f)
+        //TODO Create a system to manage that better
+        if (m_currentAttackBuffer >= 0.0f)
         {
             m_currentAttackBuffer -= Time.deltaTime;
             if (m_currentAttackBuffer <= 0.0f)
                 m_locomotion.ResetTrigger("Attack");
         }
-        if (m_currentDodgeBuffer > 0.0f)
+        if (m_currentDodgeBuffer >= 0.0f)
         {
             m_currentDodgeBuffer -= Time.deltaTime;
             if (m_currentDodgeBuffer <= 0.0f)
                 m_locomotion.ResetTrigger("Dodge");
         }
-        if (m_currentGrabBuffer > 0.0f)
+        if (m_currentGrabBuffer >= 0.0f)
         {
             m_currentGrabBuffer -= Time.deltaTime;
             if (m_currentGrabBuffer <= 0.0f)
@@ -122,8 +124,26 @@ public class Character : LivingHitable
         }
     }
     
+    public void Grab()
+    {
+        m_locomotion.SetTrigger("Grab");
+        m_currentGrabBuffer = m_grabBuffer;
+        m_currentAttackBuffer = 0.0f;
+        m_currentDodgeBuffer = 0.0f;
+    }
+
+    public void Launch()
+    {
+        m_locomotion.SetTrigger("Launch");
+        m_currentGrabBuffer = m_grabBuffer;
+        m_currentAttackBuffer = 0.0f;
+        m_currentDodgeBuffer = 0.0f;
+        
+    }
+    
     private void Push()
     {
+        //TODO Place on specific monobehaviour
         Vector2 direction = Controller.moveDir;
         bool isContact = m_detect.isContact && Controller.tilt > 0.0f && (direction.x == 0.0f || direction.y == 0.0f);
         
@@ -156,5 +176,4 @@ public class Character : LivingHitable
         yield return new WaitForSecondsRealtime(2.0f);
         GameManager.Play();
     }
-
 }

@@ -7,20 +7,21 @@ public class GrabObject : MonoBehaviour
     [Header("GrabObject")]
     [SerializeField] private Transform m_shadow;
     [SerializeField] private Collider2D m_physic;
-    [SerializeField] private Hurtbox m_hurtbox;
+    [SerializeField] private Breakable m_breakable;
     
     public void Grab()
     {
-        m_hurtbox.gameObject.SetActive(false);
+        if(m_breakable) m_breakable.hurtbox.gameObject.SetActive(false);
         m_shadow.gameObject.SetActive(false);
         m_physic.enabled = false;
     }
     
-    public void Release()
+    public void Release(Vector2 _pos)
     {
-        m_hurtbox.gameObject.SetActive(true);
         m_shadow.gameObject.SetActive(true);
-        m_physic.enabled = true;
-        
+        transform.position = _pos;
+        if(m_breakable) m_breakable.Hit(_pos, 0);
+        //TODO Destroy object
+
     }
 }
