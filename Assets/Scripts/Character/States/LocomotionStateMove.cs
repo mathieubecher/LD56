@@ -33,11 +33,11 @@ public class LocomotionStateMove : StateMachineBehaviour
     
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
-        Debug.Log("Enter Move SubState");
+        //Debug.Log("Enter Move SubState");
     }
 
     override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
     {
-        Debug.Log("Exit Move SubState");
+        //Debug.Log("Exit Move SubState");
     }
 }

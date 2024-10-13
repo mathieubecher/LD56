@@ -9,8 +9,7 @@ public class LocomotionStateHit : StateMachineBehaviour
     override public void OnStateEnter(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
         m_character = _animator.GetComponent<Character>();
-        _animator.SetBool("canDodge", false);
-        _animator.SetBool("canAttack", false);
+        _animator.SetBool("canAction", false);
     }
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
@@ -20,7 +19,6 @@ public class LocomotionStateHit : StateMachineBehaviour
 
     override public void OnStateExit(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
-        _animator.SetBool("canDodge", true);
-        _animator.SetBool("canAttack", true);
+        _animator.SetBool("canAction", true);
     }
 }

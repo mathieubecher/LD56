@@ -69,14 +69,12 @@ public class DetectCollision : MonoBehaviour
         Vector2 origin = _pos;
         float size = m_checkCaseRadius;
         
-        Debug.DrawLine(contact.transform.position, origin, Color.red, 1.0f);
         RaycastHit2D[] cast = Physics2D.CircleCastAll(origin, size, Vector2.zero, 0.0f);
         if (cast.Length > 0)
         {
             for (int i = 0; i < cast.Length; ++i)
             {
                 if(cast[i].collider.isTrigger) continue;
-                Debug.Log(cast[i].collider);
                 return false;
             }
         }

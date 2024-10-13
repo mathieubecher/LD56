@@ -35,11 +35,11 @@ public class LocomotionStateDodge : StateMachineBehaviour
     
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
-        Debug.Log("Enter Dodge SubState");
+        //Debug.Log("Enter Dodge SubState");
     }
 
     override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
     {
-        Debug.Log("Exit Dodge SubState");
+        //Debug.Log("Exit Dodge SubState");
     }
 }

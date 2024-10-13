@@ -76,11 +76,11 @@ public class LocomotionStatePush : StateMachineBehaviour
     
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
-        Debug.Log("Enter Push SubState");
+        //Debug.Log("Enter Push SubState");
     }
 
     override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
     {
-        Debug.Log("Exit Push SubState");
+        //Debug.Log("Exit Push SubState");
     }
 }
