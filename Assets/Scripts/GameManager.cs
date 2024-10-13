@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     public static bool ignoreCinematic => instance.m_ignoreCinematic;
     public static Frame frame => LevelManager.frame;
     public static Character character => LevelManager.character;
+    public static float cellSize => LevelManager.cellSize;
     
     private void Awake()
     {

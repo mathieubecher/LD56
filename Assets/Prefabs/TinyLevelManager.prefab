@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_frame: {fileID: 0}
   m_character: {fileID: 0}
+  m_cellSize: 0.5
 --- !u!114 &4466527022028217779
 MonoBehaviour:
   m_ObjectHideFlags: 0

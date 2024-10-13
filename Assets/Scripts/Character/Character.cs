@@ -11,6 +11,7 @@ public class Character : LivingHitable
     [Header("Character")]
     [SerializeField] private Animator m_animator;
     [SerializeField] private ReceiveItem m_receiveItem;
+    [SerializeField] private DetectCollision m_detect;
     [SerializeField] private float m_attackBuffer = 0.2f;
     [SerializeField] private float m_dodgeBuffer = 0.2f;
     
@@ -19,6 +20,7 @@ public class Character : LivingHitable
 
     public Animator animator => m_animator;
     public ReceiveItem receiveItem => m_receiveItem;
+    public DetectCollision detect => m_detect;
     public Life life => m_life;
     public int currentLife => m_life.currentLife;
     private bool hasControl => GameManager.hasControl;
@@ -29,11 +31,6 @@ public class Character : LivingHitable
         set => m_rigidbody.velocity = value;
     }
 
-    [Header("BoxCast")] 
-    [SerializeField] private Vector2 m_castBoxSize;
-    [SerializeField] private Vector2 m_castOffset;
-    [SerializeField] private float m_castDist;
-    [SerializeField] private LayerMask m_castLayerMask;
     protected override void Awake()
     {
         base.Awake();
@@ -66,33 +63,14 @@ public class Character : LivingHitable
         base.FixedUpdate();
         
         if (!hasControl) return;
-        CheckCollision();
-    }
-
-    private void CheckCollision()
-    {
-        Vector2 direction = Controller.moveDir;
-        if (Controller.tilt > 0.0f && (direction.x == 0.0f || direction.y == 0.0f))
-        {
-            Vector2 origin = (Vector2)transform.position + m_castOffset;
-            Vector2 size = m_castBoxSize;
-            float angle = 0.0f;
-            float distance = m_castDist;
-            RaycastHit2D[] cast = Physics2D.BoxCastAll(origin, size, angle, direction, distance, m_castLayerMask);
-            if (cast.Length > 0)
-            {
-                foreach (var hit in cast)
-                {
-                    if(hit.collider.isTrigger) continue;
-                    if(!m_animator.GetBool("push")) m_animator.SetTrigger("StartPush");
-                    m_animator.SetBool("push", true);
-                    return;
-                }
-            }
-        }
         
-        if(m_animator.GetBool("push")) m_animator.SetTrigger("Resume");
-        m_animator.SetBool("push", false);
+        Vector2 direction = Controller.moveDir;
+        bool isContact = m_detect.isContact && Controller.tilt > 0.0f && (direction.x == 0.0f || direction.y == 0.0f);
+        
+        if(!m_animator.GetBool("push") && isContact) m_animator.SetTrigger("StartPush");
+        else if(m_animator.GetBool("push") && !isContact) m_animator.SetTrigger("Resume");
+        
+        m_animator.SetBool("push", isContact);
     }
 
     public void UpdateDirection()

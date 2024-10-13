@@ -22,6 +22,8 @@ public class LevelManager : MonoBehaviour
     #endregion
     [SerializeField] private Frame m_frame;
     [SerializeField] private Character m_character;
+    [SerializeField] private float m_cellSize = 0.5f;
     public static Frame frame => instance.m_frame;
     public static Character character => instance.m_character;
+    public static float cellSize => instance.m_cellSize;
 }
