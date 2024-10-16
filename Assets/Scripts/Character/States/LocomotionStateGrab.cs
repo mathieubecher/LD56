@@ -19,5 +19,6 @@ public class LocomotionStateGrab : StateMachineBehaviour
     override public void OnStateExit(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
         _animator.SetBool("canAction", true);
+        m_character.UpdateDirection();
     }
 }

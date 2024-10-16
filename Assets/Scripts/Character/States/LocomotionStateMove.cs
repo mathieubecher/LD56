@@ -11,7 +11,7 @@ public class LocomotionStateMove : StateMachineBehaviour
     override public void OnStateEnter(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
         if(!m_character) m_character = _animator.GetComponent<Character>();
-        if(!m_grab) m_character.grab.ReleaseObject(m_character.transform.position);
+        if(!m_grab) m_character.grab.ReleaseObject(m_character.transform,m_character.transform.position);
     }
     
     override public void OnStateUpdate(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)

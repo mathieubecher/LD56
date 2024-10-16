@@ -9,7 +9,7 @@ public class LocomotionStateHit : StateMachineBehaviour
     override public void OnStateEnter(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
         m_character = _animator.GetComponent<Character>();
-        m_character.grab.ReleaseObject(m_character.transform.position);
+        m_character.grab.ReleaseObject(m_character.transform,m_character.transform.position);
 
         _animator.SetBool("canAction", false);
     }

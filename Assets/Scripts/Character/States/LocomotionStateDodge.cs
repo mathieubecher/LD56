@@ -14,7 +14,7 @@ public class LocomotionStateDodge : StateMachineBehaviour
     {
         //Debug.Log("Enter Dodge State");
         if(!m_character) m_character = _animator.GetComponent<Character>();
-        m_character.grab.ReleaseObject(m_character.transform.position);
+        m_character.grab.ReleaseObject(m_character.transform,m_character.transform.position);
 
         _animator.SetBool("canAction", false);
         _animator.SetBool("move", false);

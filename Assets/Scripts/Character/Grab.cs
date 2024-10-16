@@ -39,10 +39,10 @@ public class Grab : MonoBehaviour
         m_grab.transform.localPosition = Vector3.zero;
     }
 
-    public void ReleaseObject(Vector2 _pos, Vector2? _direction = null, float _distance = 0.0f)
+    public void ReleaseObject(Transform _owner, Vector2 _pos, Vector2? _direction = null, float _distance = 0.0f)
     {
         if (!m_grab) return;
-        m_grab.Release(_pos, _direction, _distance);
+        m_grab.Release(_owner, _pos, _direction, _distance);
         
         m_character.locomotion.SetBool("grab", false);
         m_grab = null;

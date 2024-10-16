@@ -147,10 +147,11 @@ public class Character : LivingHitable
     {
         //TODO Place on specific monobehaviour
         Vector2 direction = Controller.moveDir;
-        bool isContact = m_detect.isContact && Controller.tilt > 0.0f && (direction.x == 0.0f || direction.y == 0.0f);
+        bool grab = m_locomotion.GetBool("grab");
+        bool isContact = !grab && m_detect.isContact && Controller.tilt > 0.0f && (direction.x == 0.0f || direction.y == 0.0f);
         
         if(!m_locomotion.GetBool("push") && isContact) m_locomotion.SetTrigger("StartPush");
-        else if(m_locomotion.GetBool("push") && !isContact) m_locomotion.SetTrigger("Resume");
+        else if(m_locomotion.GetBool("push") && !grab && !isContact) m_locomotion.SetTrigger("Resume");
         
         m_locomotion.SetBool("push", isContact);
     }
