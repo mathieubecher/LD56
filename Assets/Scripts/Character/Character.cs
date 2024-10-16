@@ -127,6 +127,7 @@ public class Character : LivingHitable
     public void Grab()
     {
         m_locomotion.SetTrigger("Grab");
+        locomotion.SetBool("grab", true);
         m_currentGrabBuffer = m_grabBuffer;
         m_currentAttackBuffer = 0.0f;
         m_currentDodgeBuffer = 0.0f;
@@ -135,6 +136,7 @@ public class Character : LivingHitable
     public void Launch()
     {
         m_locomotion.SetTrigger("Launch");
+        locomotion.SetBool("grab", false);
         m_currentGrabBuffer = m_grabBuffer;
         m_currentAttackBuffer = 0.0f;
         m_currentDodgeBuffer = 0.0f;
