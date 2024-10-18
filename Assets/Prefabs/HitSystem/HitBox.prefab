@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9140237770825030348}
   - component: {fileID: 8349768955818883596}
   - component: {fileID: 1700339704457235958}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: HitBox
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cf3281879d4d6c49ba89870fc28518b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_angle: 360
+  m_damage: 1
 --- !u!50 &1700339704457235958
 Rigidbody2D:
   serializedVersion: 4

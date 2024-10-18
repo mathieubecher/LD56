@@ -54,26 +54,36 @@ MonoBehaviour:
   m_physic: {fileID: 478346390383213336}
   m_breakable: {fileID: 9116226920483371160}
   m_object: {fileID: 6061267749629142259}
+  m_launchDuration: 0.3
   m_releaseTrajectory:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -0.010054998
-      outSlope: -0.010054998
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.54023576
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.29752728
-      value: 0
-      inSlope: -7.603412
-      outSlope: -7.603412
+      time: 0.4
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.049758103
+      inWeight: 0.276025
+      outWeight: 0.54023576
+    - serializedVersion: 3
+      time: 1.0002196
+      value: 0
+      inSlope: -4.050397
+      outSlope: -4.050397
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.059943445
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -91,7 +101,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.1
+      time: 0.20082282
       value: 0
       inSlope: 0
       outSlope: 0
@@ -100,7 +110,7 @@ MonoBehaviour:
       inWeight: 0.770798
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.20511326
+      time: 0.27233264
       value: 0.039642133
       inSlope: 1.2660737
       outSlope: 1.2660737
@@ -111,8 +121,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1.2081695
-      outSlope: 1.2081695
+      inSlope: 1.3197759
+      outSlope: 1.3197759
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -120,11 +130,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_startCollideTime: 0.2
   m_castBoxSize: {x: 0.4, y: 0.4}
   m_castLayerMask:
     serializedVersion: 2
-    m_Bits: 265
+    m_Bits: 393
+  m_damage: 5
 --- !u!114 &9116226920483371160
 MonoBehaviour:
   m_ObjectHideFlags: 0

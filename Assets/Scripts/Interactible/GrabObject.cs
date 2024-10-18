@@ -35,10 +35,12 @@ public class GrabObject : MonoBehaviour
     [SerializeField] private Breakable m_breakable;
     [SerializeField] private Transform m_object;
     [Header("Launch")]
+    [SerializeField] private float m_launchDuration = 0.2f;
     [SerializeField] private AnimationCurve m_releaseTrajectory;
     [SerializeField] private AnimationCurve m_launchTrajectory;
     [SerializeField] private Vector2 m_castBoxSize;
     [SerializeField] private LayerMask m_castLayerMask;
+    [SerializeField] private int m_damage;
     private Vector2 m_objectOffset;
     private LaunchData m_launchData;
 
@@ -52,19 +54,14 @@ public class GrabObject : MonoBehaviour
         if (m_launchData.process)
         {
             m_launchData.duration += Time.deltaTime;
+            float duration = m_launchData.duration / m_launchDuration;
 
-            float maxDuration = m_releaseTrajectory.keys[^1].time;
-            float duration = m_launchData.duration;
-
-            float nextDist = m_launchTrajectory.Evaluate(duration / maxDuration);
+            float nextDist = m_launchTrajectory.Evaluate(duration);
             transform.position += (Vector3)m_launchData.direction * ((nextDist - m_launchData.currentDist) * m_launchData.distance);
             m_launchData.currentDist = nextDist;
             m_object.localPosition = m_objectOffset + Vector2.Lerp(Vector2.zero, m_launchData.startingHeigth , m_releaseTrajectory.Evaluate(duration));
-            if (duration > maxDuration)
-            {
-                Debug.Log("FIN");
-                Hit();
-            }
+            
+            if (duration >= 1.0f) Hit();
         }
     }
 
@@ -83,14 +80,17 @@ public class GrabObject : MonoBehaviour
             RaycastHit2D[] cast = Physics2D.BoxCastAll(origin, size, angle, direction, distance, mask);
             foreach(RaycastHit2D hit in cast)
             {
-                if (hit.collider.isTrigger || hit.collider.transform == m_launchData.owner) continue;
-                Debug.Log(hit.collider);
+                if(hit.collider.isTrigger || hit.collider.transform == m_launchData.owner) continue;
+                
+                if (hit.collider.gameObject.TryGetComponent(out Hitable _hit))
+                {
+                    _hit.Hit(transform.position, m_damage);
+                }
                 contact = true;
             }
 
             if (contact)
             {
-                Debug.Log("FIN");
                 Hit();
             }
         }
