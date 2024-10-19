@@ -37,6 +37,7 @@ public class Character : LivingHitable
     {
         base.Awake();
         m_locomotion = GetComponent<Animator>();
+        transform.position = GameManager.CurrentCheckpoint().transform.position;
     }
 
     protected override void OnEnable()

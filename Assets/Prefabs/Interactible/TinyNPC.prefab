@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 8917687824191298112}
   m_Layer: 8
   m_Name: TinyNPC
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,12 +217,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_infinite: 1
+  m_modules: []
   m_interact:
     sequence:
     - '[Dialog=Bla bla bla]'
     - '[Dialog=Bla bla bla]'
     - '[Dialog=Bla bla bla]'
     cameras: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!61 &9217290884921435614
 BoxCollider2D:
   m_ObjectHideFlags: 0

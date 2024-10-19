@@ -16,6 +16,7 @@ public class LocomotionStatePush : StateMachineBehaviour
     
     override public void OnStateEnter(Animator _animator, AnimatorStateInfo _stateInfo, int _layerIndex)
     {
+        //TODO wait a time before start pushing
         //Debug.Log("Enter Push State");
         if(!m_character) m_character = _animator.GetComponent<Character>();
         _animator.SetBool("canAction", false);
@@ -50,6 +51,8 @@ public class LocomotionStatePush : StateMachineBehaviour
         }
         
         m_timer += Time.deltaTime / m_duration;
+        if (!m_pushObject) return;
+        
         float nextPos = m_positionOverTime.Evaluate(m_timer) * GameManager.cellSize;
         m_character.velocity = m_pushDirection * (nextPos - m_currentPos)/Time.deltaTime;
         m_currentPos = nextPos;
