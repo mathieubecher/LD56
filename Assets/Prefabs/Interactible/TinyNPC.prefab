@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c5fe9af81e92341a7b522481956242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_infinite: 1
   m_interact:
     sequence:
     - '[Dialog=Bla bla bla]'

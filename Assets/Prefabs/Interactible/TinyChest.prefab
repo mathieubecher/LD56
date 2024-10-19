@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8af7923709326c4a8ae272f319002ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_infinite: 1
+  m_modules:
+  - rid: 3471619342161674316
   m_chestSprite: {fileID: 1251108014852270869}
   m_openSprite: {fileID: -1482102200, guid: 64600ac8a71be464a9348f6d19178cc2, type: 3}
   m_contains: Sword
@@ -58,6 +61,13 @@ MonoBehaviour:
     - '[Dialog=Bla bla bla]'
     - '[StopShowItem=]'
     cameras: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 3471619342161674316
+      type: {class: Persistent, ns: , asm: Assembly-CSharp}
+      data:
+        m_name: 
 --- !u!61 &378680145421911865
 BoxCollider2D:
   m_ObjectHideFlags: 0

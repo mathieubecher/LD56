@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     
     private bool m_hasControl = true;
     private Dictionary<string, int> m_items;
+    private List<string> m_persistents;
     public static bool hasControl => instance.m_hasControl;
     public static bool ignoreCinematic => instance.m_ignoreCinematic;
     public static Frame frame => LevelManager.frame;
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         m_items = new Dictionary<string, int>();
+        m_persistents = new List<string>();
     }
 
     public static void Play()
@@ -107,10 +109,14 @@ public class GameManager : MonoBehaviour
 
     public static bool HasItem(string _item)
     {
-        if (instance.m_items == null) return false;
-        return instance.m_items.ContainsKey(_item) && instance.m_items[_item] > 0;
+        return NumberItem(_item) > 0;
     }
-
+    
+    public static int NumberItem(string _item)
+    {
+        if (instance.m_items == null || !instance.m_items.ContainsKey(_item)) return 0;
+        return instance.m_items[_item];
+    }
     public static void UseItem(string _item, int _number)
     {
         instance.m_items[_item] -= _number;
@@ -145,4 +151,17 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
+    public static bool HasPersistant(string _persistent)
+    {
+        if (instance.m_persistents == null) return false;
+        return instance.m_persistents.Contains(_persistent);
+    }
+
+    public static void AddPersistant(string _persistent)
+    {
+        if (HasPersistant(_persistent)) return;
+        instance.m_persistents.Add(_persistent);
+    }
+
 }
