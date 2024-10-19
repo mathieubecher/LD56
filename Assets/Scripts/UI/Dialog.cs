@@ -1,9 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Dialog : MonoBehaviour
 {
+    [Serializable]
+    public struct CharConversion
+    {
+        public String character;
+        public GameObject sprite;
+    }
+    
     public delegate void SimpleCallback();
     private SimpleCallback m_dialogCallback;
     
@@ -13,14 +21,12 @@ public class Dialog : MonoBehaviour
     [SerializeField] private int m_lineMargin;
     [SerializeField] private int m_dialogLength;
     [SerializeField] private Transform m_arrow;
-    [SerializeField] private List<GameObject> m_blackLetters;
-    [SerializeField] private List<GameObject> m_redLetters;
-    [SerializeField] private GameObject m_space;
+    [SerializeField] private List<CharConversion> m_charConversion;
+    [SerializeField] private List<CharConversion> m_redCharConversion;
     
     private float m_drawDialogDuration;
-    private bool m_isRedWord = false;
-    private int m_nbWordChars = 0;
-    private int m_visibleChars = 0;
+    private bool m_isRedWord;
+    private int m_visibleChars;
     private float m_visibleCharTime;
     private string m_dialogToDraw;
     
@@ -103,46 +109,40 @@ public class Dialog : MonoBehaviour
         ResetText();
         gameObject.SetActive(true);
 
-        int totalChar = Random.Range(30, m_dialogLength * 2 - 3);
         Vector2 pos = Vector2.zero;
+        m_isRedWord = false;
+        int remainingLength = m_dialogLength;
         
-
-        while (totalChar >= 3)
+        foreach(char _character in m_dialogToDraw)
         {
-            m_nbWordChars = 0;
-            m_isRedWord = false;
-            int remainingLength = m_dialogLength;
-            
-            while (remainingLength >= 3)
+            if (_character == '/')
             {
-                GameObject letterObject = Instantiate(SelectChar(), m_textBase);
-                Letter letter = letterObject.GetComponent<Letter>();
-                letter.transform.localPosition = pos * m_pixelSize;
-                letter.gameObject.SetActive(false);
-                m_letters.Add(letter);
-            
-                pos.x += letter.size;
-                remainingLength -= letter.size;
-                totalChar -= letter.size;
+                m_isRedWord = !m_isRedWord;
+                continue;
             }
+            GameObject letterObject = Instantiate(SelectChar(_character), m_textBase);
+            Letter letter = letterObject.GetComponent<Letter>();
+            letter.transform.localPosition = pos * m_pixelSize;
+            letter.gameObject.SetActive(false);
+            m_letters.Add(letter);
+        
+            pos.x += letter.size;
+            remainingLength -= letter.size;
 
-            pos.x = 0;
-            pos.y -= m_lineMargin;
+            if (remainingLength < 3)
+            {
+                pos.x = 0;
+                pos.y -= m_lineMargin;
+                remainingLength = m_dialogLength;
+            }
         }
         m_arrow.gameObject.SetActive(false);
     }
 
-    private GameObject SelectChar()
+    private GameObject SelectChar(char _character)
     {
-        if (Random.Range(0f, 5.0f) < m_nbWordChars)
-        {
-            m_nbWordChars = 0;
-            m_isRedWord = Random.Range(0.0f, 1.0f) < 0.1f;
-            return m_space;
-        }
-
-        ++m_nbWordChars;
-        if(m_isRedWord) return m_redLetters[Random.Range(0, m_redLetters.Count)];
-         return m_blackLetters[Random.Range(0, m_blackLetters.Count)];
+        char lowerChar = char.ToLower(_character);
+        if(m_isRedWord) return m_redCharConversion.Find(x => x.character.Contains(lowerChar)).sprite;
+        return m_charConversion.Find(x => x.character.Contains(lowerChar)).sprite;
     }
 }

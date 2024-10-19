@@ -13,6 +13,7 @@ public struct Cinematic
     public List<String> sequence;
     public List<CinemachineVirtualCamera> cameras;
 }
+
 public class CinematicManager : MonoBehaviour
 {
     #region Singleton

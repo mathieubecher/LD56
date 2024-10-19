@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8af7923709326c4a8ae272f319002ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_infinite: 1
+  m_infinite: 0
   m_modules:
   - rid: 3471619342161674316
   m_chestSprite: {fileID: 1251108014852270869}
@@ -56,9 +56,9 @@ MonoBehaviour:
   m_openCinematic:
     sequence:
     - '[ShowItem=Sword|Wait=1.5]'
-    - '[Dialog=Bla bla bla]'
-    - '[Dialog=Bla bla bla]'
-    - '[Dialog=Bla bla bla]'
+    - '[Dialog=/Lorem ipsum/ dolor sit amet,]'
+    - '[Dialog=consectetur adipiscing elit.]'
+    - '[Dialog=Donec /molestie/ eget ligula eget.]'
     - '[StopShowItem=]'
     cameras: []
   references:
