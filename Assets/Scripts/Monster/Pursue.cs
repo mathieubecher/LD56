@@ -11,8 +11,6 @@ public class Pursue : Monster
     [SerializeField] private float m_pursueSpeed;
     [SerializeField] private float m_pursueInertia;
     
-    
-    
     private bool m_detectPlayer;
 
     private float playerDistance => Vector2.Distance(transform.position, GameManager.character.transform.position);
@@ -20,8 +18,14 @@ public class Pursue : Monster
     
     protected override void Update()
     {
-        base.Update();  
+        base.Update();
 
+        if (GameManager.character.life.dead)
+        {
+            m_detectPlayer = false;
+            return;
+        }
+        
         if (playerDistance <= m_maxDetectionDistance)
         {
             m_detectPlayer = true;

@@ -8,7 +8,7 @@ using UnityEngine;
     [SerializeField] private string m_name;
     public void Awake(Interactable _interactable)
     {
-        if (GameManager.HasPersistant(m_name))
+        if (GameManager.HasPersistent(m_name))
         {
             _interactable.Activate();   
         }
@@ -16,7 +16,7 @@ using UnityEngine;
 
     public bool Activate(Interactable _interactable)
     {
-        GameManager.AddPersistant(m_name);
+        GameManager.AddPersistent(m_name);
         return true;
     }
 }

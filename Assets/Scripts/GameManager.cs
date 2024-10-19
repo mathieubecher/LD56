@@ -152,15 +152,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static bool HasPersistant(string _persistent)
+    public static bool HasPersistent(string _persistent)
     {
         if (instance.m_persistents == null) return false;
         return instance.m_persistents.Contains(_persistent);
     }
 
-    public static void AddPersistant(string _persistent)
+    public static void AddPersistent(string _persistent)
     {
-        if (HasPersistant(_persistent)) return;
+        if (HasPersistent(_persistent)) return;
         instance.m_persistents.Add(_persistent);
     }
 
